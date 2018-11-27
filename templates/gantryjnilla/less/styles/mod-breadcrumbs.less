@@ -1,0 +1,31 @@
+.mod-breadcrumbs {
+	padding: 10px 15px;
+
+	.breadcrumb {
+		padding: 0;
+		margin-bottom: 0;
+		background-color: transparent;
+	}
+
+	ul li:first-child {
+		display: none;
+	}
+
+	ul li {
+		font-size: 16px;
+		text-shadow: none;
+	}
+
+	ul li.active {
+		color: @linkColor;
+	}
+
+	ul li a,
+	ul li .divider {
+		color: @linkColorHover;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}

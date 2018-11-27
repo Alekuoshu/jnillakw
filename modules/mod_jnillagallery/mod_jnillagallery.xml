@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1.0" client="site" method="upgrade">
+	<name>Jnilla Gallery Module</name>
+	<author>Alekuoshu</author>
+	<creationDate>Sept 2017</creationDate>
+	<copyright>Copyright (C) 2017 AlekuoshuWeb. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>alekuoshu@gmail.com</authorEmail>
+	<authorUrl>http://alekuoshu.com.ve</authorUrl>
+	<version>1.1.8</version>
+	<description>Module Jnilla Gallery - For params manager with jnillagallery plugin</description>
+	<files>
+		<filename>mod_jnillagallery.xml</filename>
+		<filename module="mod_jnillagallery">mod_jnillagallery.php</filename>
+		<filename>listvideos.xml</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<filename>tmpl/default.php</filename>
+		<filename>tmpl/index.html</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" label="Module" description="Jnilla Gallery Basic Params">
+				<field name="jnlayout"
+					type="list"
+					default="default"
+					label="Select layout"
+					required="true"
+					description="Choose a layout for gallery">
+					<option value="default">Default</option>
+					<option value="carousel1">Carousel-1</option>
+					<option value="carousel2">Carousel-2</option>
+					<option value="carousel3">Carousel-3</option>
+					<option value="carousel4">Carousel-4</option>
+					<option value="carousel5">Carousel-5</option>
+					<option value="masonry">Masonry</option>
+					<option value="rotator">Rotator</option>
+					<option value="rotator2">Rotator-2</option>
+					<option value="slider3">Slider-3</option>
+					<option value="slider5">Slider-5</option>
+					<option value="fvideos">Featured Videos</option>
+				</field>
+				<field name="type"
+					type="radio"
+					default="images"
+					label="Gallery Type"
+					description=""
+					class="btn-group btn-group-yesno"
+					showon="jnlayout:slider3,slider5,rotator2,default">
+					<option value="images">Images</option>
+					<option value="videos">Videos</option>
+				</field>
+				<field name="gallery"
+					type="folderlist"
+					label="Gallery Folder"
+					description="Choose folder for photo gallery"
+					directory="images"
+					hide_default="true"
+					showon="jnlayout!:fvideos[AND]type:images"
+					/>
+				<field name="list_videos"
+					type="subform"
+					formsource="modules/mod_jnillagallery/listvideos.xml"
+					multiple="true"
+					label="Add Videos"
+					description="Add videos for jnillagallery"
+					layout="joomla.form.field.subform.repeatable-table"
+					showon="type:videos"/>
+				<field name="list_fvideos"
+					type="subform"
+					formsource="modules/mod_jnillagallery/listvideos.xml"
+					multiple="true"
+					label="Add Videos"
+					description="Add videos for jnillagallery"
+					layout="joomla.form.field.subform.repeatable-table"
+					max="6"
+					showon="jnlayout:fvideos"/>
+				<field name="jnbox"
+					type="radio"
+					default="false"
+					label="Modal Gallery"
+					description="If yes, image on click open in a modal"
+					class="btn-group btn-group-yesno"
+					showon="jnlayout:carousel1,carousel3,carousel5,rotator,rotator2,slider3,slider5">
+					<option value="true">JYES</option>
+					<option value="false">JNO</option>
+				</field>
+				<field name="infinite_scroll"
+					type="radio"
+					default="false"
+					label="Use infinite scroll"
+					description="If yes, layout gallery add an infinite scroll"
+					class="btn-group btn-group-yesno"
+					showon="jnlayout:default">
+					<option value="true">JYES</option>
+					<option value="false">JNO</option>
+				</field>
+				<field name="num_item_pages" type="text"
+					default="12"
+					required="true"
+					label="Number items by page"
+					description="Insert the number of items to show by page"
+					showon="jnlayout:default,masonry"
+					/>
+				<field name="cols_number"
+					type="list"
+					default="4"
+					label="Number of columns"
+					description="Insert the number of grid columns. Nota: should be: min 2 and max 12 / it's even better"
+					showon="jnlayout:default,masonry"
+					>
+					<option value="2">2 cols</option>
+					<option value="3">3 cols</option>
+					<option value="4">4 cols</option>
+					<option value="5">5 cols</option>
+					<option value="6">6 cols</option>
+				</field>
+				<field name="interval" type="text"
+					default="6"
+					required="true"
+					label="Interval rotator or slide (in seconds)"
+					description="Insert the number of seconds for rotator or slide interval"
+					showon="jnlayout:carousel1,carousel3,carousel4,carousel5,rotator,rotator2"
+					/>
+				<field name="space_images"
+					type="radio"
+					default="true"
+					label="Space between images"
+					description="If yes, image set space between images"
+					class="btn-group btn-group-yesno"
+					showon="jnlayout:default,masonry,rotator">
+					<option value="true">JYES</option>
+					<option value="false">JNO</option>
+				</field>
+				<field name="caption"
+					type="radio"
+					default="false"
+					label="Use Caption"
+					description="If yes, show caption for each item"
+					class="btn-group btn-group-yesno"
+					showon="jnlayout:carousel1,carousel3,slider3,slider5,default">
+					<option value="true">JYES</option>
+					<option value="false">JNO</option>
+				</field>
+				<field name="style_caption"
+					type="list"
+					default="0"
+					label="Style Caption"
+					description=""
+					showon="caption:true[AND]jnlayout!:fvideos,carousel2,carousel4,carousel5,masonry,rotator,rotator2,">
+					<option value="inside">Inside</option>
+					<option value="outside">Outside</option>
+				</field>
+				<field name="style_slider3"
+					type="list"
+					default="0"
+					label="Select Style"
+					description=""
+					showon="jnlayout:slider3">
+					<option value="style1">Style-1</option>
+					<option value="style2">Style-2</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

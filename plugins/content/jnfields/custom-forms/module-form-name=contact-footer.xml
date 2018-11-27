@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="params">
+		<fieldset name="jnfields" label="Jn Fields">
+			<field name="address"
+				type="editor"
+				label="Address"
+				description="add address"
+				buttons="true"
+				filter="raw"
+			/>
+      <field name="email"
+				type="email"
+				label="Email"
+				description="add email address"
+			/>
+			<field name="phone"
+				type="text"
+				label="Phone"
+				description="add phone number"
+			/>
+			<field name="jn_form_name"
+				type="text"
+				label="PLG_CONTENT_JNFIELDS_FIELD_FORM_NAME_LABEL"
+				description="PLG_CONTENT_JNFIELDS_FIELD_FORM_NAME_DESC"
+			/>
+		</fieldset>
+	</fields>
+</form>

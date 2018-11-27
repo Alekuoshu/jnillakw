@@ -1,0 +1,137 @@
+
+
+/*for fvideos layout*/
+@media only screen and (max-width: 767px) {
+	.jnilla-gallery {
+		height: 800px;
+		overflow: auto;
+	}
+}
+.jnilla-gallery .fvideos .img-container {
+	position: relative;
+	margin-bottom: 0;
+	overflow: hidden;
+}
+.jnilla-gallery .fvideos .rollover {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	opacity: 0;
+	transition: 0.4s;
+	-webkit-transition: 0.4s;
+	-moz-transition: 0.4s;
+	-o-transition: 0.4s;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	font-size: 1em;
+}
+
+.jnilla-gallery .fvideos .rollover img {
+	max-width: 45px;
+}
+
+.jnilla-gallery .fvideos.videos .rollover {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	opacity: 1;
+	transition: 0.4s;
+	-webkit-transition: 0.4s;
+	-moz-transition: 0.4s;
+	-o-transition: 0.4s;
+	color: #fff;
+	font-size: 2em;
+}
+
+.jnilla-gallery .fvideos .item:hover .rollover {
+	opacity: 1;
+	background-color: rgba(0, 0, 0, 0.2);
+	transition: 0.4s;
+	-webkit-transition: 0.4s;
+	-moz-transition: 0.4s;
+	-o-transition: 0.4s;
+	font-size: 2.5em;
+}
+
+.jnilla-gallery .fvideos .gallery-item {
+	cursor: pointer;
+	margin-bottom: 25px;
+}
+
+.jnilla-gallery .fvideos .item img {
+	transition: 1s;
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	-o-transition: 1s;
+}
+.jnilla-gallery .fvideos .item:hover img {
+	transition: 1s;
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	-o-transition: 1s;
+	transform: scale(1.2);
+}
+
+.jnilla-gallery .fvideos .caption {
+	position: absolute;
+	bottom: 8px;
+	color: #fff;
+	font-size: 1.5em;
+	left: 20px;
+	width: 68%;
+}
+
+.jnilla-gallery .fvideos .caption  h4 {
+	line-height: 1.2;
+}
+
+.jnilla-gallery .fvideos #gallery-item-1 .caption {
+	font-size: 2em;
+}
+
+.jnilla-gallery .fvideos #gallery-item-1 .jn-holder {
+	height: 435px;
+}
+
+.jnilla-gallery .fvideos .icon-play {
+	position: absolute;
+	bottom: -50px;
+	right: -50px;
+	background: rgba(0, 0, 0, 0.5);
+	width: 150px;
+	height: 150px;
+	border-radius: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.jnilla-gallery .fvideos .icon-play:before {
+	position: relative;
+	top: -15px;
+	right: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+	.jnilla-gallery .fvideos.layoutEven .span2 {
+		width: 18.29%;
+	}
+}
+
+.loading {
+	text-align: center;
+}
+.loading img {
+	max-width: 70px;
+}

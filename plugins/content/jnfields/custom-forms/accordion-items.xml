@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+  <field name="accordion_header"
+    type="text"
+    label="Title"
+    description=""
+  />
+  <field name="accordion_content"
+    type="editor"
+    label="Content"
+    description=""
+    buttons="true"
+    filter="raw"
+  />
+</form>

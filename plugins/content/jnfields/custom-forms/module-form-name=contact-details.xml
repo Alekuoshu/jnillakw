@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="params">
+		<fieldset name="jnfields" label="Jn Fields" description="Custom fields for contact details">
+			<field name="address"
+				type="editor"
+				label="Dirección"
+				description="Agregar dirección de ubicación"
+                filter="raw"
+				buttons="true"
+				/>
+			<field name="link_address"
+				type="textarea"
+				label="Link Dirección"
+				description="Agregar url del mapa"
+			/>
+			<field name="phone1"
+				type="text"
+				label="Teléfono 1"
+				description="agregar numero de teléfono"
+				/>
+			<field name="phone2"
+				type="text"
+				label="Teléfono 2"
+				description="agregar numero de teléfono"
+				/>
+			<field name="email"
+				type="email"
+				label="correo"
+				description="Agregar correo"
+				/>
+			<field name="horario"
+				type="editor"
+				label="Horario"
+				description="Agregar horario"
+				filter="raw"
+				buttons="true"
+			/>
+			<field name="jn_form_name"
+				type="text"
+				label="PLG_CONTENT_JNFIELDS_FIELD_FORM_NAME_LABEL"
+				description="PLG_CONTENT_JNFIELDS_FIELD_FORM_NAME_DESC"
+				/>
+		</fieldset>
+	</fields>
+</form>

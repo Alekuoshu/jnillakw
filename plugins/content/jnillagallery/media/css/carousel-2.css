@@ -1,0 +1,192 @@
+
+/*for carousel-2 layout*/
+.jnilla-gallery .carousel-2 {
+  position: relative;
+}
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+  .jnilla-gallery .carousel-2 {
+    padding: 0 15px;
+  }
+}
+.jnilla-gallery .carousel-2 .img-container {
+  background-color: #eee;
+  height: 350px;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.jnilla-gallery .carousel-2 .img-container.no-block {
+  background-size: contain;
+}
+@media only screen and (min-width: 980px) and (max-width: 1199px) {
+  .jnilla-gallery .carousel-2 .img-container {
+    height: 282px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+  .jnilla-gallery .carousel-2 .img-container {
+    height: 221px;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+  .jnilla-gallery .carousel-2 .img-container {
+    height: 260px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .jnilla-gallery .carousel-2 .img-container {
+    height: 200px;
+  }
+}
+.jnilla-gallery .carousel-2 .carousel-control {
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  background: none;
+  color: #1269a5;
+  border: none;
+  opacity: 0.8;
+  top: 46%;
+  width: 25px;
+  height: 25px;
+  font-size: 40px;
+}
+.jnilla-gallery .carousel-2 .carousel-control:hover {
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  opacity: 1;
+  background: none;
+  color: #1269a5;
+  border: none;
+}
+@media only screen and (max-width: 480px) {
+  .jnilla-gallery .carousel-2 .carousel-control {
+    top: auto;
+    bottom: 30px;
+  }
+}
+@media (min-width: 1200px) {
+  .jnilla-gallery .carousel-2 .carousel-control.left {
+    left: -25px;
+  }
+}
+@media only screen and (min-width: 980px) and (max-width: 1199px) {
+  .jnilla-gallery .carousel-2 .carousel-control.left {
+    left: -25px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+  .jnilla-gallery .carousel-2 .carousel-control.left {
+    left: -25px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .jnilla-gallery .carousel-2 .carousel-control.left {
+    left: -10px;
+  }
+}
+@media (min-width: 1200px) {
+  .jnilla-gallery .carousel-2 .carousel-control.right {
+    right: -5px;
+  }
+}
+@media only screen and (min-width: 980px) and (max-width: 1199px) {
+  .jnilla-gallery .carousel-2 .carousel-control.right {
+    right: -15px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+  .jnilla-gallery .carousel-2 .carousel-control.right {
+    right: -10px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .jnilla-gallery .carousel-2 .carousel-control.right {
+    right: -10px;
+  }
+}
+.jnilla-gallery .carousel-2 .span4 {
+  margin-bottom: 20px;
+  margin-right: 10px;
+  width: 29.5%;
+}
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+  .jnilla-gallery .carousel-2 .span4 {
+    margin-right: 5px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .jnilla-gallery .carousel-2 .span4 {
+    width: 13%;
+    margin: 5px !important;
+    float: left;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .jnilla-gallery .carousel-2 .span4 {
+    width: 12.5%;
+    margin: 5px !important;
+    float: left;
+  }
+}
+.jnilla-gallery .carousel-2 .span4:nth-child(4) {
+  margin-left: 0;
+}
+.jnilla-gallery .carousel-2 .span4:nth-child(3) {
+  margin-right: 0;
+}
+.jnilla-gallery .carousel-2 .content-img {
+  position: relative;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+}
+.jnilla-gallery .carousel-2 .content-img .rollover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1em;
+}
+.jnilla-gallery .carousel-2 .content-img:hover .rollover {
+  opacity: 1;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  font-size: 3em;
+}
+@media only screen and (max-width: 480px) {
+  .jnilla-gallery .carousel-2 .content-img:hover .rollover {
+    font-size: 1em;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .jnilla-gallery .carousel-2 .carousel-inner {
+    width: 90%;
+    padding: 0 5%;
+  }
+}

@@ -1,0 +1,74 @@
+
+
+/*for masonry layout*/
+@media only screen and (max-width: 767px) {
+  .jnilla-gallery {
+    height: 800px;
+    overflow: auto;
+  }
+}
+.jnilla-gallery .masonry .img-container {
+	position: relative;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+.jnilla-gallery .spaced .img-container {
+  margin-bottom: 25px;
+}
+.jnilla-gallery .masonry .rollover {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	opacity: 0;
+	transition: 0.4s;
+	-webkit-transition: 0.4s;
+	-moz-transition: 0.4s;
+	-o-transition: 0.4s;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+	color: #fff;
+	font-size: 1em;
+}
+.jnilla-gallery .masonry .item:hover .rollover {
+	opacity: 1;
+	transition: 0.4s;
+	-webkit-transition: 0.4s;
+	-moz-transition: 0.4s;
+	-o-transition: 0.4s;
+	font-size: 3em;
+}
+
+.jnilla-gallery .masonry .gallery-item {
+  cursor: pointer;
+}
+
+.jnilla-gallery .masonry .item img {
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -o-transition: 1s;
+}
+.jnilla-gallery .masonry .item:hover img {
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -o-transition: 1s;
+  transform: scale(1.2);
+}
+
+.jnilla-gallery .masonry .jn-gallery-thumb {
+	width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+	.jnilla-gallery .masonry.layoutEven .span2 {
+		width: 18.29%;
+	}
+}

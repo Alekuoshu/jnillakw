@@ -1,0 +1,52 @@
+
+
+.page-autoload-marker {
+  text-align: center;
+  margin: 15px 0;
+  -webkit-animation: working 1s infinite;
+  -moz-animation: working 1s infinite;
+  -o-animation: working 1s infinite;
+  animation: working 1s infinite;
+}
+.page-autoload-marker .btn-inverse {
+  color: #fff;
+  opacity: 1;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  text-transform: uppercase;
+  border-radius: 100%;
+  border: 0;
+  cursor: default;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 0;
+  animation: rotate3d 2s linear infinite;
+  -webkit-animation: rotate3d 2s linear infinite;
+  -moz-animation: rotate3d 2s linear infinite;
+  -o-animation: rotate3d 2s linear infinite;
+
+}
+
+.page-autoload-marker .blink {
+  opacity: 0;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+/*@keyframes rotate3d {
+  100% { -webkit-transform: rotateY(360deg); transform:rotateY(360deg); }
+}
+@-moz-keyframes rotate3d {
+  100% { -moz-transform: rotateY(360deg); }
+}
+@-webkit-keyframes rotate3d {
+  100% { -webkit-transform: rotateY(360deg); }
+}*/

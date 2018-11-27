@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<field name="title"
+		type="text"
+		label="Video Title"
+		description=""
+		/>
+	<field name="url_video"
+		type="textarea"
+		label="URL Video (Youtube)"
+		description=""
+		filter="raw"
+		/>
+	<!-- <field name="intro_img"
+		type="media"
+		label="Intro Image"
+		description="Leave empty for take image from video"
+		/> -->
+</form>

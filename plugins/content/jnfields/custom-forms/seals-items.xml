@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+  <field name="image"
+    type="media"
+    label="Image"
+    description=""
+  />
+  <field name="title"
+    type="text"
+    label="Title"
+    description="Alt title for missing image"
+  />
+  <field name="url"
+		type="url"
+		label="URL"
+		description=""
+	/>
+</form>

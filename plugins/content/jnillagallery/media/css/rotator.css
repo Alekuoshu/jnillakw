@@ -1,0 +1,84 @@
+
+
+/*for rotator layout*/
+/*@media only screen and (max-width: 767px) {
+  .jnilla-gallery {
+    height: 800px;
+    overflow: auto;
+  }
+}*/
+.jnilla-gallery .rotator .img-container {
+  overflow: hidden;
+}
+.jnilla-gallery .rotator .rollover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1em;
+}
+.jnilla-gallery.gallery .rotator .gallery-item:hover .rollover {
+  opacity: 1;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  font-size: 3em;
+}
+.jnilla-gallery.gallery .rotator .gallery-item {
+  cursor: pointer;
+}
+.jnilla-gallery .rotator .gallery-item img {
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -o-transition: 1s;
+}
+.jnilla-gallery .rotator .gallery-item:hover img {
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -o-transition: 1s;
+  transform: scale(1.2);
+}
+
+.jnilla-gallery .rotator.spaced .gallery-item img {
+  display: block;
+  margin: auto;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+/*jn-gallery-rotator*/
+.jn-gallery-rotator {
+	overflow: hidden;
+	height: 200px;
+	position: relative;
+}
+
+.jn-gallery-rotator-item {
+	position: absolute;
+	width: 200px;
+	/*height: 200px;*/
+	transition: 1s;
+	opacity: 0;
+}
+
+.spaced .jn-gallery-rotator-item {
+  width: 20%;
+}
+
+.jn-gallery-rotator-item.active {
+	opacity: 1;
+}

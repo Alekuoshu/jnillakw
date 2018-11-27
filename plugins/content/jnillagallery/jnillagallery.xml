@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="plugin" group="content" method="upgrade">
+	<name>PLG_CONTENT_JNILLAGALLERY</name>
+	<author>Alekuoshu</author>
+	<creationDate>Oct  2017</creationDate>
+	<copyright>Copyright (C) 2017 AlekuoshuWeb. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>alekuoshu@gmail.com</authorEmail>
+	<authorUrl>http://alekuoshu.com.ve</authorUrl>
+	<version>1.1.8</version>
+	<description>PLG_CONTENT_JNILLAGALLERY_XML_DESCRIPTION</description>
+
+	<files>
+		<folder>assets</folder>
+		<folder>language</folder>
+		<folder>layouts</folder>
+		<folder>media</folder>
+		<filename plugin="jnillagallery">jnillagallery.php</filename>
+		<filename>index.html</filename>
+	</files>
+
+	<!-- <media folder="media" destination="plg_content_jnillagallery">
+	<folder>css</folder>
+	<folder>js</folder>
+	<filename>index.html</filename>
+</media> -->
+
+<config>
+	<fields name="params">
+		<fieldset name="basic">
+			<field name="base_folder" type="text"
+				default="images/"
+				required="true"
+				label="PLG_CONTENT_JNILLAGALLERY_FIELD_BASE_FOLDER_LABEL"
+				description="PLG_CONTENT_JNILLAGALLERY_FIELD_BASE_FOLDER_DESC"
+				/>
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field name="execution_side" type="list"
+					default="0"
+					label="PLG_CONTENT_JNILLAGALLERY_FIELD_EXECUTION_SIDE_LABEL"
+					description="PLG_CONTENT_JNILLAGALLERY_FIELD_EXECUTION_SIDE_DESC"
+					>
+					<option value="site">PLG_CONTENT_JNILLAGALLERY_FIELD_OPTION_FRONTEDN</option>
+					<option value="admin">PLG_CONTENT_JNILLAGALLERY_FIELD_OPTION_BACKEND</option>
+					<option value="both">PLG_CONTENT_JNILLAGALLERY_FIELD_OPTION_BOTH_SIDES</option>
+				</field>
+				<field name="debug_mode" type="radio"
+					class="btn-group"
+					default="0"
+					label="PLG_CONTENT_JNILLAGALLERY_DEBUG_MODE_LABEL"
+					description="PLG_CONTENT_JNILLAGALLERY_DEBUG_MODE_DESC"
+					>
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+			</fieldset>
+
+		</fields>
+	</config>
+</extension>

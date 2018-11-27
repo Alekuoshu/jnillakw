@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+  <field name="tab"
+    type="text"
+    label="Tab"
+    description=""
+  />
+  <field name="content_tab"
+    type="textarea"
+    label="Content Tab"
+    description=""
+    filter="raw"
+  />
+  
+</form>

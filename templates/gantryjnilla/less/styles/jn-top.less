@@ -1,0 +1,30 @@
+#jn-top {
+
+    //only for menu mobile
+    #jn-top-1 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: @zindexFixedNavbar;
+        .box-shadow(1px 2px 6px rgba(0, 0, 0, 0.1));
+        background-color: rgba(255, 255, 255, 0.9);
+        .transition (0.5s);
+
+        &:hover {
+            .transition (0.5s);
+            .box-shadow(1px 2px 6px rgba(0, 0, 0, 0.7));
+        }
+    }
+
+    #jn-top-1 .container {
+        width: 100%;
+
+        @media only screen and (min-width: 481px) and (max-width: 767px) {
+            max-width: 100%;
+        }
+    }
+
+    //////////////////////////////////////////
+
+}

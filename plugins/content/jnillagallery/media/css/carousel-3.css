@@ -1,0 +1,140 @@
+
+
+.jnilla-gallery .carousel-3 .item img {
+  width: 100%;
+}
+.jnilla-gallery .carousel-3.gallery .item img {
+  cursor: pointer;
+}
+.jnilla-gallery .carousel-3 .no-block {
+  background-position: 50% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.jnilla-gallery .carousel-3 .carousel-control {
+  border-radius: 0;
+  border: none;
+  font-size: 2em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.jnilla-gallery .carousel-3 .carousel-control.left {
+  left: 0;
+}
+.jnilla-gallery .carousel-3 .carousel-control.right {
+  right: 0;
+}
+.jnilla-gallery .carousel-3 .carousel-control,
+.jnilla-gallery .carousel-3 .carousel-caption {
+  opacity: 0;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.jnilla-gallery .carousel-3:hover .carousel-control,
+.jnilla-gallery .carousel-3:hover .carousel-caption {
+  opacity: 0.9;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.jnilla-gallery .indicators-container {
+  position: relative;
+  height: 60px;
+  width: 100%;
+  overflow: hidden;
+}
+.jnilla-gallery .carousel-thumbnails {
+  position: absolute;
+  top: 5px;
+  transition: left 4s linear;
+}
+.jnilla-gallery .carousel-3 .carousel-indicators {
+  position: relative;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  transition: left 0.5s linear;
+}
+.jnilla-gallery .carousel-3 .carousel-indicators li {
+  width: 66px;
+  height: 50px;
+  text-indent: initial;
+  cursor: pointer;
+  position: relative;
+  border-radius: 0;
+  border: 1px solid transparent;
+  display: inline-block;
+  float: none;
+  transition: 0.3s;
+}
+.jnilla-gallery .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  transition: background-color 0.3s, background-color 0.3s;
+  background-color: rgba(0, 0, 0, 0.25);
+  border: 1px solid transparent;
+  box-shadow: 1px 0 1px transparent;
+}
+.jnilla-gallery .carousel-3 .carousel-indicators li:hover .overlay,
+.jnilla-gallery .carousel-3 .carousel-indicators li.active .overlay {
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  border: 1px solid grey;
+}
+.jnilla-gallery .carousel-3 .carousel {
+  margin-bottom: 60px;
+}
+/*.jnilla-gallery .carousel-3 .carousel .item {
+transition: opacity 1.5s;
+-webkit-transition: opacity 1.5s;
+-moz-transition: opacity 1.5s;
+-o-transition: opacity 1.5s;
+}
+.jnilla-gallery .carousel-3 .carousel .active.left,
+.jnilla-gallery .carousel .active.right {
+left: 0;
+opacity: 0;
+z-index: 2;
+}
+.jnilla-gallery .carousel-3 .carousel .next,
+.jnilla-gallery .carousel .prev {
+left: 0;
+opacity: 1;
+z-index: 1;
+}*/
+
+/*fade effect*/
+.carousel-inner .item {
+  opacity: 0;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+}
+.carousel-inner .active {
+  opacity: 1;
+}
+.carousel-inner .active.left,
+.carousel-inner .active.right {
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+.carousel-inner .next.left,
+.carousel-inner .prev.right {
+  opacity: 1;
+}
+.carousel-control {
+  z-index: 2;
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="params">
+		<fieldset name="jnfields" label="Jn Fields">
+			<field type="spacer" name="jn_form_name_spacer" hr="true" />
+      	<field name="phone"
+				type="text"
+				label="Teléfono"
+				description="add phone number"
+		/>
+      	<field name="address"
+				type="textarea"
+				label="Dirección"
+				description=""
+		/>
+		<field name="url_address"
+				type="text"
+				label="URL Dirección"
+				description=""
+		/>
+		<field name="jn_form_name"
+			type="text"
+			label="PLG_CONTENT_JNFIELDS_FIELD_FORM_NAME_LABEL"
+			description="PLG_CONTENT_JNFIELDS_FIELD_FORM_NAME_DESC"
+		/>
+		</fieldset>
+	</fields>
+</form>

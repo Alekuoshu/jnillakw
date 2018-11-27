@@ -1,0 +1,801 @@
+
+.jnilla-gallery .slider-5.style2 {
+	padding: 30px 0;
+	position: relative;
+	overflow: hidden;
+}
+
+.jnilla-gallery .slider-5.style2 .gallery-items {
+	height: calc(100% * 29.8 / 100);
+	position: relative;
+}
+
+.jnilla-gallery .slider-5.style2 .gallery-item {
+	position: absolute;
+	top: 0;
+	left: 101%;
+	transition: all .8s ease-in-out;
+	-webkit-transition: all .8s ease-in-out;
+	-moz-transition: all .8s ease-in-out;
+	-ms-transition: all .8s ease-in-out;
+	-o-transition: all .8s ease-in-out;
+
+	opacity: 0.4;
+	transform: scale(0.6);
+	-webkit-transform: scale(0.6);
+	-moz-transform: scale(0.6);
+	-ms-transform: scale(0.6);
+	-o-transform: scale(0.6);
+}
+
+.jnilla-gallery .slider-5.style2 .gallery-item > img {
+	height: 100%;
+	width: 100%;
+}
+
+.jnilla-gallery .slider-5.gallery .gallery-item.right3.default3 > img,
+.jnilla-gallery .slider-5.gallery .gallery-item.default2 > img,
+.jnilla-gallery .slider-5.gallery .gallery-item.right3.default3 > .rollover,
+.jnilla-gallery .slider-5.gallery .gallery-item.default2 > .rollover {
+	cursor: pointer;
+}
+
+.jnilla-gallery .slider-5.gallery .rollover img {
+  max-width: 50px;
+}
+
+.jnilla-gallery .slider-5.gallery .gallery-item.videos .rollover,
+.jnilla-gallery .slider-5.gallery .gallery-item.videos.right2.default2 .rollover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  opacity: 0;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  color: #fff;
+  font-size: 1em;
+}
+
+.jnilla-gallery .slider-5.gallery .gallery-item.videos.right3.default3 .rollover,
+.jnilla-gallery .slider-5.gallery .gallery-item.videos.default2 .rollover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  opacity: 0.95;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  color: #fff;
+  font-size: 1em;
+}
+
+.jnilla-gallery .slider-5.gallery .gallery-item.videos.right3.default3 .rollover img,
+.jnilla-gallery .slider-5.gallery .gallery-item.videos.default2 .rollover img {
+	transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -o-transition: 1s;
+  transform: scale(1);
+}
+
+.jnilla-gallery .slider-5.gallery .gallery-item.videos.right3.default3 .rollover:hover img,
+.jnilla-gallery .slider-5.gallery .gallery-item.videos.default2 .rollover:hover img {
+	transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -o-transition: 1s;
+  transform: scale(1.3);
+}
+
+.jnilla-gallery .slider-5.style2 .controls {
+	background-color: rgba(255,255,255,0.7);
+	cursor: pointer;
+	display: inline-block;
+	padding: 1em;
+	position: absolute;
+	top: 50%;
+
+	transform: translate(0,-50%);
+	-webkit-transform: translate(0,-50%);
+	-moz-transform: translate(0,-50%);
+	-o-transform: translate(0,-50%);
+
+	transition: all .3s ease-in-out;
+	-webkit-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+
+	z-index: 8;
+}
+
+.jnilla-gallery .slider-5.style2 .controls.left {
+	left: 27.5%;
+}
+
+.jnilla-gallery .slider-5.style2 .controls.right {
+	right: 27.5%;
+}
+
+.jnilla-gallery .slider-5.style2 .controls:hover{
+	background-color: #addb30;
+}
+
+.jnilla-gallery .icon-angle-left:before {
+	content: "\f104";
+}
+
+.jnilla-gallery .icon-angle-right:before {
+	content: "\f105";
+}
+
+.jnilla-gallery .icon-angle-left:before,
+.jnilla-gallery .icon-angle-right:before {
+	color: #333;
+	font-family: "FontAwesome";
+	font-weight: normal;
+	font-style: normal;
+	font-size: 30px;
+	height: auto;
+	width: auto;
+}
+
+.jnilla-gallery .controls.left:hover .icon-angle-left:before,
+.jnilla-gallery .controls.right:hover  .icon-angle-right:before {
+	color: white;
+}
+
+.jnilla-gallery .slider-5.style2 .gallery-items .default0 {
+	left: -9.3%;
+	opacity: 0.4;
+	transform: scale(0.6);
+	-webkit-transform: scale(0.6);
+	-moz-transform: scale(0.6);
+	-ms-transform: scale(0.6);
+	-o-transform: scale(0.6);
+}
+.jnilla-gallery .slider-5.style2 .gallery-items .default1 {
+	left: 7%;
+	transform: scale(0.8);
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	-ms-transform: scale(0.8);
+	-o-transform: scale(0.8);
+	opacity: 0.95;
+	z-index: 2;
+}
+
+.jnilla-gallery .slider-5.style2 .gallery-items .default2 {
+	left: 50%;
+	opacity: 1;
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	z-index: 3;
+}
+
+.jnilla-gallery .slider-5.style2 .gallery-items .default3 {
+	left: 48%;
+	transform: scale(0.8);
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	-ms-transform: scale(0.8);
+	-o-transform: scale(0.8);
+	opacity: 0.95;
+	z-index: 2;
+}
+
+.jnilla-gallery .slider-5.style2 .gallery-items .default4 {
+	left: 64%;
+	opacity: 0.4;
+	transform: scale(0.6);
+	-webkit-transform: scale(0.6);
+	-moz-transform: scale(0.6);
+	-ms-transform: scale(0.6);
+	-o-transform: scale(0.6);
+}
+
+.jnilla-gallery .slider-5.style2 .gallery-items .left0 {
+	z-index: 1;
+	animation-name: left05;
+	animation-duration: 0.8s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in-out;
+
+	-webkit-animation-name: left05;
+	-webkit-animation-duration: 0.8s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-timing-function: ease-in-out;
+
+	opacity: 0.4;
+	transform: scale(0.6);
+	-webkit-transform: scale(0.6);
+	-moz-transform: scale(0.6);
+	-ms-transform: scale(0.6);
+	-o-transform: scale(0.6);
+}
+
+.jnilla-gallery .slider-5.style2 .gallery-items .left1 {
+	animation-name: left15;
+	animation-duration: .8s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in-out;
+
+	-webkit-animation-name: left15;
+	-webkit-animation-duration: .8s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-timing-function: ease-in-out;
+
+	transform: scale(0.8);
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	-ms-transform: scale(0.8);
+	-o-transform: scale(0.8);
+	opacity: 0.95;
+	z-index: 2;
+
+}
+
+.jnilla-gallery .slider-5.style2 .gallery-items .left2 {
+	z-index: 3;
+	animation-name: left25;
+	animation-duration: .8s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in-out;
+
+	-webkit-animation-name: left25;
+	-webkit-animation-duration: .8s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-timing-function: ease-in-out;
+
+	opacity: 1;
+	transform: scale(1);
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	-o-transform: scale(1);
+
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+}
+
+.jnilla-gallery .slider-5.style2 .gallery-items .left3 {
+	z-index: 2;
+	animation-name: left35;
+	animation-duration: .8s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in-out;
+
+	-webkit-animation-name: left35;
+	-webkit-animation-duration: .8s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-timing-function: ease-in-out;
+
+	opacity: 0.95;
+	transform: scale(0.8);
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	-ms-transform: scale(0.8);
+	-o-transform: scale(0.8);
+}
+
+.jnilla-gallery .slider-5.style2 .gallery-items .left4 {
+	z-index: 1;
+	animation-name: left45;
+	animation-duration: 0.8s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in-out;
+
+	-webkit-animation-name: left45;
+	-webkit-animation-duration: 0.8s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-timing-function: ease-in-out;
+
+	opacity: 0.4;
+	transform: scale(0.6);
+	-webkit-transform: scale(0.6);
+	-moz-transform: scale(0.6);
+	-ms-transform: scale(0.6);
+	-o-transform: scale(0.6);
+}
+
+.jnilla-gallery .slider-5.style2 .gallery-items .left5 {
+	z-index: 1;
+	animation-name: left55;
+	animation-duration: 0.8s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in-out;
+
+	-webkit-animation-name: left55;
+	-webkit-animation-duration: 0.8s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-timing-function: ease-in-out;
+
+	opacity: 0.4;
+	transform: scale(0.6);
+	-webkit-transform: scale(0.6);
+	-moz-transform: scale(0.6);
+	-ms-transform: scale(0.6);
+	-o-transform: scale(0.6);
+}
+
+@keyframes left05 {
+	0% {
+		left: -60%;
+	}
+	100% {
+		left: -9.3%;
+	}
+}
+
+@keyframes left15 {
+	0% {
+		left: -9.3%;
+	}
+	100% {
+		left: 7%;
+	}
+}
+
+@keyframes left25 {
+	0% {
+		left: 7%;
+	}
+	100% {
+		left: 50%;
+	}
+}
+
+@keyframes left35 {
+	0% {
+		left: 50%;
+	}
+	100% {
+		left: 48%;
+	}
+}
+
+@keyframes left45 {
+	0% {
+		left: 48%;
+	}
+	100% {
+		left: 64%;
+	}
+}
+
+@keyframes left55 {
+	0% {
+		left: 64%;
+	}
+	100% {
+		left: 100%;
+	}
+}
+
+@-webkit-keyframes left05 {
+	0% {
+		left: -60%;
+	}
+	100% {
+		left: -9.3%;
+	}
+}
+
+@-webkit-keyframes left15 {
+	0% {
+		left: -9.3%;
+	}
+	100% {
+		left: 7%;
+	}
+}
+
+@-webkit-keyframes left25 {
+	0% {
+		left: 7%;
+	}
+	100% {
+		left: 50%;
+	}
+}
+
+@-webkit-keyframes left35 {
+	0% {
+		left: 50%;
+	}
+	100% {
+		left: 48%;
+	}
+}
+
+@-webkit-keyframes left45 {
+	0% {
+		left: 48%;
+	}
+	100% {
+		left: 64%;
+	}
+}
+
+@-webkit-keyframes left55 {
+	0% {
+		left: 64%;
+	}
+	100% {
+		left: 100%;
+	}
+}
+
+
+.jnilla-gallery .slider-5.style2 .gallery-items .right0 {
+	animation-name: right05;
+	animation-duration: .8s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in-out;
+
+	-webkit-animation-name: right05;
+	-webkit-animation-duration: .8s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-timing-function: ease-in-out;
+
+	opacity: 0.4;
+	transform: scale(0.6);
+	-webkit-transform: scale(0.6);
+	-moz-transform: scale(0.6);
+	-ms-transform: scale(0.6);
+	-o-transform: scale(0.6);
+}
+
+.jnilla-gallery .slider-5.style2 .gallery-items .right1 {
+	z-index: 1;
+	animation-name: right15;
+	animation-duration: .8s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in-out;
+
+	-webkit-animation-name: right15;
+	-webkit-animation-duration: .8s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-timing-function: ease-in-out;
+
+	opacity: 0.4;
+	transform: scale(0.6);
+	-webkit-transform: scale(0.6);
+	-moz-transform: scale(0.6);
+	-ms-transform: scale(0.6);
+	-o-transform: scale(0.6);
+}
+
+.jnilla-gallery .slider-5.style2 .gallery-items .right2 {
+	z-index: 2;
+	animation-name: right25;
+	animation-duration: .8s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in-out;
+
+	-webkit-animation-name: right25;
+	-webkit-animation-duration: .8s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-timing-function: ease-in-out;
+
+	opacity: 0.95;
+	transform: scale(0.8);
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	-ms-transform: scale(0.8);
+	-o-transform: scale(0.8);
+
+}
+
+.jnilla-gallery .slider-5.style2 .gallery-items .right3 {
+	z-index: 3;
+	animation-name: right35;
+	animation-duration: .8s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in-out;
+
+	-webkit-animation-name: right35;
+	-webkit-animation-duration: .8s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-timing-function: ease-in-out;
+
+	opacity: 1;
+	transform: scale(1);
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	-o-transform: scale(1);
+
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+
+}
+
+.jnilla-gallery .slider-5.style2 .gallery-items .right4 {
+	z-index: 2;
+	animation-name: right45;
+	animation-duration: .8s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in-out;
+
+	-webkit-animation-name: right45;
+	-webkit-animation-duration: .8s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-timing-function: ease-in-out;
+
+	opacity: 0.95;
+	transform: scale(0.8);
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	-ms-transform: scale(0.8);
+	-o-transform: scale(0.8);
+
+}
+
+.jnilla-gallery .slider-5.style2 .gallery-items .right5 {
+	z-index: 1;
+	animation-name: right55;
+	animation-duration: .8s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in-out;
+
+	-webkit-animation-name: right55;
+	-webkit-animation-duration: .8s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-timing-function: ease-in-out;
+
+	opacity: 0.4;
+	transform: scale(0.6);
+	-webkit-transform: scale(0.6);
+	-moz-transform: scale(0.6);
+	-ms-transform: scale(0.6);
+	-o-transform: scale(0.6);
+}
+
+@keyframes right05 {
+	0% {
+		left: -9.3%;
+	}
+	100% {
+		left: -60%;
+	}
+}
+
+@keyframes right15 {
+	0% {
+		left: 7%;
+	}
+	100% {
+		left: -9.3%;
+	}
+}
+
+@keyframes right25 {
+	0% {
+		left: 50%;
+	}
+	100% {
+		left: 7%;
+	}
+}
+
+@keyframes right35 {
+	0% {
+		left: 48%;
+	}
+	100% {
+		left: 50%;
+	}
+}
+
+@keyframes right45 {
+	0% {
+		left: 64%;
+	}
+	100% {
+		left: 49%;
+	}
+}
+
+@keyframes right55 {
+	0% {
+		left: 100%;
+	}
+	100% {
+		left: 64%;
+	}
+}
+
+@-webkit-keyframes right05 {
+	0% {
+		left: -9.3%;
+	}
+	100% {
+		left: -60%;
+	}
+}
+
+@-webkit-keyframes right15 {
+	0% {
+		left: 7%;
+	}
+	100% {
+		left: -9.3%;
+	}
+}
+
+@-webkit-keyframes right25 {
+	0% {
+		left: 50%;
+	}
+	100% {
+		left: 7%;
+	}
+}
+
+@-webkit-keyframes right35 {
+	0% {
+		left: 48%;
+	}
+	100% {
+		left: 50%;
+	}
+}
+
+@-webkit-keyframes right45 {
+	0% {
+		left: 64%;
+	}
+	100% {
+		left: 49%;
+	}
+}
+
+@-webkit-keyframes right55 {
+	0% {
+		left: 100%;
+	}
+	100% {
+		left: 64%;
+	}
+}
+
+@media only screen and (max-width: 767px){
+
+	.jnilla-gallery .slider-5.style2 .controls {
+		padding: 5px;
+	}
+}
+
+/*style to captions outside*/
+.jnilla-gallery .slider-5.style2 .gallery-item .outside-caption {
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+.jnilla-gallery .slider-5.style2 .gallery-item .outside-caption h4 {
+	text-align: center;
+	opacity: 0;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+}
+
+.jnilla-gallery .slider-5.style2 .gallery-item.default2 .outside-caption h4 {
+	text-align: center;
+	opacity: 1;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+}
+
+.jnilla-gallery .slider-5.style2 .gallery-item.right2.default2 .outside-caption h4 {
+	text-align: center;
+	opacity: 0;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+}
+
+.jnilla-gallery .slider-5.style2 .gallery-item.right3.default3 .outside-caption h4 {
+	text-align: center;
+	opacity: 1;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+}
+
+
+/*style to captions inside*/
+.jnilla-gallery .slider-5.style2 .gallery-item .carousel-caption h4 {
+	text-align: center;
+}
+
+.jnilla-gallery .slider-5.style2 .gallery-item .carousel-caption {
+	opacity: 0;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+}
+
+.jnilla-gallery .slider-5.style2 .gallery-item.default2 .carousel-caption {
+	opacity: 1;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+}
+
+.jnilla-gallery .slider-5.style2 .gallery-item.right2.default2 .carousel-caption {
+	opacity: 0;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+}
+
+.jnilla-gallery .slider-5.style2 .gallery-item.right3.default3 .carousel-caption {
+	opacity: 1;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+}

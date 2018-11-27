@@ -1,0 +1,185 @@
+.mod-menu-mobile {
+    padding: 0;
+    z-index: 9999999;
+}
+
+@media only screen and (max-width: 767px) {
+
+    .mod-menu-mobile .header-menu .span4,
+    .mod-menu-mobile .header-menu .span8 {
+        float: left !important;
+        width: 50%;
+    }
+}
+
+.mod-menu-mobile .fa-reorder {
+    color: #CDCFCE;
+    font-size: 3em;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+}
+
+.mod-menu-mobile .fa-reorder:hover {
+    transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    color: #23607e;
+}
+
+.mod-menu-mobile .fa-reorder.active {
+    color: #23607e;
+}
+
+.mod-menu-mobile .panel-toggle {
+    cursor: pointer;
+    text-align: right;
+    padding: 20px 15px;
+}
+
+.mod-menu-mobile .panel-logo {
+    padding: 0px;
+}
+
+.mod-menu-mobile .panel-logo img {
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+}
+
+.mod-menu-mobile .menu .item {
+    font-size: 1.2em;
+    display: block;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    color: #000;
+    padding-left: 30px;
+    border-top: 1px solid rgba(221, 221, 221, 0.5);
+}
+
+@media only screen and (max-width: 480px) {
+    .mod-menu-mobile .menu .item {
+        font-size: 1em;
+    }
+}
+
+.mod-menu-mobile .menu>li:last-child .item {
+    border-bottom: 1px solid rgba(221, 221, 221, 0.5);
+}
+
+.mod-menu-mobile .menu>li {
+    position: relative;
+}
+
+.mod-menu-mobile .menu .item:after {
+    content: '.';
+    position: absolute;
+    top: 4px;
+    left: 15px;
+    color: #23607e;
+    font-size: 2em;
+    font-weight: bold;
+    font-family: serif;
+}
+
+.mod-menu-mobile .menu>li>.item:hover,
+.mod-menu-mobile .menu>li>.item:focus,
+.mod-menu-mobile .menu>li.active>.item {
+    background-color: #23607e;
+    color: #fff;
+    text-decoration: none;
+}
+
+.mod-menu-mobile .menu>li>.item:hover:after,
+.mod-menu-mobile .menu>li>.item:focus:after,
+.mod-menu-mobile .menu>li.active>.item:after {
+    color: #fff;
+}
+
+.mod-menu-mobile .menu ul {
+    list-style: none;
+}
+
+.mod-menu-mobile .menu ul>li>.item:hover,
+.mod-menu-mobile .menu ul>li>.item:focus,
+.mod-menu-mobile .menu ul>li.active>.item {
+    background-color: #23607e;
+    color: #fff;
+    text-decoration: none;
+}
+
+.mod-menu-mobile .menu ul>li>.item:hover:after,
+.mod-menu-mobile .menu ul>li>.item:focus:after,
+.mod-menu-mobile .menu ul>li.active>.item:after {
+    color: #fff;
+}
+
+.mod-menu-mobile .menu ul ul>li>.item:hover,
+.mod-menu-mobile .menu ul ul>li>.item:focus,
+.mod-menu-mobile .menu ul ul>li.active>.item {
+    background-color: #23607e;
+    color: #fff;
+    text-decoration: none;
+}
+
+.mod-menu-mobile .menu ul ul>li>.item:hover:after,
+.mod-menu-mobile .menu ul ul>li>.item:focus:after,
+.mod-menu-mobile .menu ul ul>li.active>.item:after {
+    color: #fff;
+}
+
+.mod-menu-mobile .header-menu {
+    transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    padding: 0px 15px;
+}
+
+.mod-menu-mobile .body-menu {
+    background-color: #fff;
+    padding: 30px 0px;
+    display: none;
+}
+
+.mod-menu-mobile .mod-menu-main-mobile {
+    height: 400px;
+    overflow-y: auto;
+}
+
+.mod-menu-mobile.Active .header-menu {
+    background-color: rgba(255, 255, 255, 0.95);
+    transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+}
+
+.mod-menu-mobile.Active .fa-reorder {
+    transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    color: #23607e;
+}
+
+/* media queries */
+@media only screen and (max-width: 480px) {
+    .mod-menu-mobile .panel-toggle {
+        padding: 16px 0;
+    }
+
+    .mod-menu-mobile .panel-logo img {
+        max-width: 150px;
+    }
+}

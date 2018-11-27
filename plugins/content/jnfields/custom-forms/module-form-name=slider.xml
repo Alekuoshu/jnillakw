@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="params">
+		<fieldset name="jnfields" label="Jn Fields" description="Custom fields for slider module">
+			<field name="jnholder"
+				type="radio"
+				default="0"
+				label="Jn Holder"
+				description="Choose Yes if you want use jn holder for images"
+				class="btn-group btn-group-yesno">
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+			</field>
+			<field name="ratio"
+				type="list"
+				label="Select an option"
+				default="cinema"
+				description=""
+				showon="jnholder:1">
+				<option value="box">Box</option>
+				<option value="tv">Tv</option>
+				<option value="wide">Wide</option>
+				<option value="cinema">Cinema</option>
+			</field>
+			<field name="effect"
+				type="radio"
+				default="slide"
+				label="Effect"
+				description="Choose which effect would you like?"
+				class="btn-group btn-group-yesno">
+				<option value="slide">Slide</option>
+				<option value="fade">Fade</option>
+			</field>
+			<field name="interval"
+				type="number"
+				label="Interval"
+				default="8"
+				description="Duration for each slide (in seconds)"
+				/>
+			<field name="list_items"
+				type="subform"
+				formsource="plugins/content/jnfields/custom-forms/slider-items.xml"
+				multiple="true"
+				label="Add items"
+				description="Add items for module"
+				/>
+				<field name="jn_form_name"
+					type="text"
+					label="PLG_CONTENT_JNFIELDS_FIELD_FORM_NAME_LABEL"
+					description="PLG_CONTENT_JNFIELDS_FIELD_FORM_NAME_DESC"
+					/>
+				</fieldset>
+			</fields>
+		</form>

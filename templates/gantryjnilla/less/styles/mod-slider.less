@@ -1,0 +1,50 @@
+.mod-slider {
+
+	.carousel-inner .item {
+		.transition-duration(1s);
+	}
+
+	&:hover {
+		cursor: -webkit-grab;
+		cursor: -moz-grab;
+		cursor: grab;
+	}
+
+	.carousel-control {
+		background: transparent;
+		border: none;
+		top: 45%;
+	}
+
+	.fade {
+		opacity: 1;
+
+		// fade effect
+		.carousel-inner .item {
+			-webkit-transition-property: opacity;
+			-moz-transition-property: opacity;
+			-o-transition-property: opacity;
+			transition-property: opacity;
+		}
+
+		.carousel-inner .active {
+			opacity: 1;
+		}
+
+		.carousel-inner .active.left,
+		.carousel-inner .active.right {
+			left: 0;
+			opacity: 0;
+			z-index: 1;
+		}
+
+		.carousel-inner .next.left,
+		.carousel-inner .prev.right {
+			opacity: 1;
+		}
+
+		.carousel-control {
+			z-index: 2;
+		}
+	}
+}

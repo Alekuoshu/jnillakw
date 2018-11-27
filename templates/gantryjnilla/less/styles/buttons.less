@@ -1,0 +1,51 @@
+.btn-style-1 {
+    padding: 15px 25px;
+    background: @linkColor;
+    color: @white;
+    font-size: 1.5em;
+    display: table;
+    border: 0;
+    box-shadow: none;
+    .transition(all 0.3s ease-in-out);
+
+    @media only screen and (min-width: 768px) and (max-width: 979px) {
+        font-size: 1.2em;
+    }
+
+    @media only screen and (max-width: 767px) {
+        font-size: 1em;
+    }
+
+    &:hover,
+    &:focus {
+        color: @white;
+        text-decoration: none;
+        background: @linkColorHover;
+    }
+}
+
+.btn-style-2 {
+    padding: 15px 25px;
+    background: @grayDark;
+    color: @white;
+    font-size: 1.5em;
+    display: table;
+    border: 0;
+    box-shadow: none;
+    .transition(all 0.3s ease-in-out);
+
+    @media only screen and (min-width: 768px) and (max-width: 979px) {
+        font-size: 1.2em;
+    }
+
+    @media only screen and (max-width: 767px) {
+        font-size: 1em;
+    }
+
+    &:hover,
+    &:focus {
+        color: @white;
+        text-decoration: none;
+        background: @grayDarker;
+    }
+}

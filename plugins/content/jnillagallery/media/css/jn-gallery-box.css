@@ -1,0 +1,37 @@
+/**
+ * @copyright   Copyright (C) 2013 jnilla.com. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see http://www.gnu.org/licenses/gpl-2.0.html
+ * @credits     Check credits.html included in this package or repository for a full list of credits
+ */
+.jn-gallery-box {
+  cursor: pointer;
+}
+#jn-gallery-box {
+  position: absolute;
+}
+@media only screen and (min-width: 768px) {
+  #jn-gallery-box {
+    position: absolute;
+    left: 10%;
+    width: 80%;
+    margin-left: auto;
+  }
+}
+#jn-gallery-box .jn-gallery-box-img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+#jn-gallery-box .modal-body {
+  overflow-y: visible;
+  max-height: none;
+  width: auto;
+}
+#jn-gallery-box .close {
+  position: absolute;
+  right: 0px;
+  top: 4px;
+  font-size: 30px;
+  line-height: 10px;
+  z-index: 999;
+}

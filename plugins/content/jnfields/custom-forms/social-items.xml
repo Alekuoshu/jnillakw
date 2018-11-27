@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+		<field name="social_name"
+			default="none"
+			type="list"
+			label="Social Name"
+			description=""
+			class="social_name"
+			>
+			<option value="none">Choose an option</option>
+			<option value="facebook">Facebook</option>
+			<option value="instagram">Instagram</option>
+			<option value="twitter">Twitter</option>
+			<option value="google">Google+</option>
+			<option value="linkedin">Linkedin</option>
+			<option value="pinterest">Pinterest</option>
+			<option value="yelp">Yelp</option>
+		</field>
+		<field name="social_url"
+			validate="url"
+			type="url"
+			class="social_url"
+			label="Social URL"
+			description=""
+			default="https://redsocial.com/usuario"
+			/>
+		<field name="item_class"
+		type="text"
+		label="Class"
+		description=""
+		/>
+	</fieldset>
+</form>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1.0" client="site" method="upgrade">
+	<name>KW Menu Mobile Module</name>
+	<author>Alekuoshu</author>
+	<creationDate>Oct 2018</creationDate>
+	<copyright>Copyright (C) 2018 KoshucasWeb. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>alekuoshu@gmail.com</authorEmail>
+	<authorUrl>https://koshucasweb.com.ve</authorUrl>
+	<version>1.0.0</version>
+	<description>Module for manage menu mobiles, for now just has two layouts, default and drawer...</description>
+	<files>
+		<filename>mod_kwmenumobile.xml</filename>
+		<filename module="mod_kwmenumobile">mod_kwmenumobile.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<filename>tmpl/default.php</filename>
+		<filename>tmpl/drawer.php</filename>
+		<filename>tmpl/index.html</filename>
+	</files>
+
+	<media destination="mod_kwmenumobile" folder="media">
+		<folder>css</folder>
+		<folder>js</folder>
+		<filename>index.html</filename>
+	</media>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic" label="Module" description="KW Menu Mobile Basic Params">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC"
+				>
+					<option	value="default">JDEFAULT</option>
+				</field>
+				<field name="drawer_direction"
+					type="list"
+					default="right"
+					label="Select drawer direction"
+					description="Choose a direction for drawer"
+					showon="layout:_:drawer">
+					<option value="right">Right</option>
+					<option value="left">Left</option>
+					<option value="top">Top</option>
+					<option value="bottom">Bottom</option>
+				</field>
+				<field name="logo"
+					type="media"
+					label="Choose Logo"
+					description="Choose logo image for show at side to hamburger icon on header from menu"
+				/>
+				<field name="menu"
+					type="editor"
+					label="Add menu module"
+					description="Choose which menu module would you like to show"
+					width="400px"
+					height="250px"
+					buttons="true"
+					filter="raw"
+					showon="layout:_:default"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

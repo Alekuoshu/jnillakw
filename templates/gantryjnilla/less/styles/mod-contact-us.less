@@ -1,0 +1,96 @@
+.mod-contact-us {
+
+    .jnilla-contact-form {
+
+        input,
+        textarea {
+            width: 92%;
+            border-radius: 0;
+            background: transparent;
+            border: 1px solid #31393C;
+            // color: #bfbfbf;
+        }
+
+        input {
+            height: 40px;
+        }
+
+        textarea {
+            padding-top: 25px;
+            height: 149px;
+        }
+
+        .btn-style-1 {
+            font-size: 1.3em;
+            padding: 12px 30px;
+
+            @media only screen and (max-width: 767px) {
+                .table-center;
+            }
+
+        }
+
+        .control-group {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        //label effect
+        label {
+            position: absolute;
+            top: 25px;
+            left: 16px;
+            font-size: 13px;
+            color: #bfbfbf;
+            pointer-events: none;
+            z-index: 9;
+            transition: .3s;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            -webkit-transform-origin: 0 0;
+            -moz-transform-origin: 0 0;
+            -ms-transform-origin: 0 0;
+            transform-origin: 0 0;
+        }
+
+        .control-group.focus label {
+            top: 3px;
+            color: #555;
+            transform: scale(0.8) translateY(0);
+        }
+
+        .g-recaptcha {
+            @media only screen and (max-width: 767px) {
+                display: table;
+                margin-left: auto;
+                margin-right: auto;
+                transform-origin: unset !important;
+            }
+        }
+
+        ///////////////////////////////////////////
+    }
+
+    // placeholders
+    ::-webkit-input-placeholder {
+        /* WebKit, Blink, Edge */
+        color: #bfbfbf;
+    }
+
+    :-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 */
+        color: #bfbfbf;
+        opacity: 1;
+    }
+
+    ::-moz-placeholder {
+        /* Mozilla Firefox 19+ */
+        color: #bfbfbf;
+        opacity: 1;
+    }
+
+    :-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: #bfbfbf;
+    }
+}

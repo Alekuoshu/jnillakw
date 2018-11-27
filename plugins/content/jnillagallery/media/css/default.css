@@ -1,0 +1,100 @@
+
+
+/*for default layout*/
+@media only screen and (max-width: 767px) {
+  .jnilla-gallery {
+    height: 800px;
+    overflow: auto;
+  }
+}
+.jnilla-gallery .default .img-container {
+  position: relative;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+.jnilla-gallery .spaced .img-container {
+  margin-bottom: 25px;
+}
+.jnilla-gallery .default .rollover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1em;
+}
+.jnilla-gallery .default .item:hover .rollover {
+  opacity: 1;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  font-size: 3em;
+}
+
+.jnilla-gallery .default .rollover img {
+  max-width: 45px;
+}
+
+.jnilla-gallery .default.videos .rollover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  opacity: 0.95;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1em;
+}
+
+.jnilla-gallery .default .gallery-item {
+  cursor: pointer;
+}
+
+.jnilla-gallery .default .item img {
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -o-transition: 1s;
+}
+.jnilla-gallery .default .item:hover img {
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -o-transition: 1s;
+  transform: scale(1.2);
+}
+
+@media only screen and (min-width: 768px) {
+  .jnilla-gallery .default.layoutEven .span2 {
+    width: 18.29%;
+  }
+}
+
+.loading {
+  text-align: center;
+}
+.loading img {
+  max-width: 70px;
+}

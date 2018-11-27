@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="params">
+		<fieldset name="jnfields" label="Jn Fields">
+		<field name="image"
+		type="media"
+		label="Image"
+		description=""
+	/>
+	<field name="text1"
+		type="editor"
+		label="Text 1"
+		description=""
+		buttons="true"
+		filter="raw"
+	/>
+	<field name="text2"
+		type="editor"
+		label="Text 2"
+		description=""
+		buttons="true"
+		filter="raw"
+	/>
+	<field name="btntext"
+		type="text"
+		label="Text Button"
+		description=""
+	/>
+	<field name="btnurl"
+		type="menuitem"
+		default=""
+		label="Select a menu item"
+		description="Select a menu item"
+	>
+	<option	value="">JDEFAULT</option>
+	</field>
+			<field name="jn_form_name"
+				type="text"
+				label="PLG_CONTENT_JNFIELDS_FIELD_FORM_NAME_LABEL"
+				description="PLG_CONTENT_JNFIELDS_FIELD_FORM_NAME_DESC"
+			/>
+		</fieldset>
+	</fields>
+</form>

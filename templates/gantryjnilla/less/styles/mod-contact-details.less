@@ -1,0 +1,81 @@
+.mod-contact-details {
+    padding-top: 20px;
+
+    ul {
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+
+        @media only screen and (max-width: 767px) {
+            margin-left: 15px;
+        }
+    }
+
+    ul li {
+        color: @textColor;
+        margin-bottom: 10px;
+        padding-bottom: 9px;
+        list-style: none;
+    }
+
+    ul li a {
+        font-size: 1.2em;
+        color: @textColor;
+        font-weight: bold;
+        .transition(all 0.3s ease-in-out);
+
+        @media only screen and (max-width: 979px) {
+            font-size: 1em;
+        }
+
+        &:hover,
+        &:focus {
+            color: @linkColor;
+        }
+    }
+
+    ul li i {
+        color: @linkColor;
+        font-size: 22px;
+        padding-right: 8px;
+    }
+
+    ul li p {
+        display: inline-block;
+        font-size: 1.2em;
+        color: @textColor;
+        font-weight: bold;
+
+        @media only screen and (max-width: 979px) {
+            font-size: 0.9em;
+        }
+    }
+
+    .fa-clock-o {
+        position: relative;
+        top: -35px;
+    }
+
+    address {
+        margin-bottom: 0;
+        display: inline-block;
+        width: 75%;
+
+        @media only screen and (max-width: 767px) {
+            width: 90%;
+        }
+    }
+
+    .fa-map-marker {
+        position: relative;
+        top: -10px;
+
+        @media only screen and (min-width: 768px) and (max-width: 979px) {
+            top: -20px;
+        }
+
+        @media only screen and (max-width: 767px) {
+            top: -15px;
+        }
+    }
+}
