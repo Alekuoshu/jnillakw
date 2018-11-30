@@ -4,7 +4,7 @@ defined('_JEXEC') or die;
 $items = $displayData["items"];
 $class = $displayData["class"];
 $id = $options["id"];
-if(empty($id)) $id = "accordion-".uniqid();
+if(empty($id)) $id = "carousel-".uniqid();
 $interval = $options["interval"];
 if(empty($interval)) $interval = 6000;
 ?>
@@ -14,7 +14,7 @@ if(empty($interval)) $interval = 6000;
 			<li data-target="<?php echo "#$id"; ?>" data-slide-to="<?php echo $itemKey; ?>" <?php if($itemKey == 0) echo "class=\"active\""?>></li>
 		<?php endforeach; ?>
 	</ol>
-	
+
 	<div class="carousel-inner">
 		<?php foreach ($items as $itemKey => $item) : ?>
 			<div class="item <?php if($itemKey == 0) echo "active"; ?>">
@@ -22,7 +22,7 @@ if(empty($interval)) $interval = 6000;
 			</div>
 		<?php endforeach; ?>
 	</div>
-	
+
 	<a class="left carousel-control" href="<?php echo "#$id"; ?>" data-slide="prev">‹</a>
 	<a class="right carousel-control" href="<?php echo "#$id"; ?>" data-slide="next">›</a>
 </div>

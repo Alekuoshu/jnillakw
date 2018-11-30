@@ -13,38 +13,52 @@ $msgList = $displayData['msgList'];
 ?>
 <div id="system-message-container">
 	<?php if (is_array($msgList) && !empty($msgList)) : ?>
-		<div id="system-message">
-			<?php foreach ($msgList as $type => $msgs) : ?>
-				<?php
+	<div id="system-message">
+		<?php foreach ($msgList as $type => $msgs) : ?>
+		<?php
 					switch (strtolower($type)) {
 						case 'message':
-							$class = 'info';
-							break;
-						case 'notice':
 							$class = 'success';
 							break;
 						case 'notice':
 							$class = 'info';
+							break;
+						case 'error':
+							$class = 'error';
 							break;
 						default:
 							$class = $type;
 							break;
 					}
 				?>
-				<div class="alert alert-<?php echo $class; ?>">
-					<?php // This requires JS so we should add it trough JS. Progressive enhancement and stuff. ?>
-					<a class="close" data-dismiss="alert">×</a>
-
-					<?php if (!empty($msgs)) : ?>
-						<h4 class="alert-heading"><?php echo JText::_($type); ?></h4>
-						<div>
-							<?php foreach ($msgs as $msg) : ?>
-								<div class="alert-message"><?php echo $msg; ?></div>
-							<?php endforeach; ?>
-						</div>
-					<?php endif; ?>
+		<!-- Modal -->
+		<div id="mySystemModal" class="alert alert-<?php echo $class; ?> modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<?php if (!empty($msgs)) : ?>
+				<h3 class="alert-heading">
+					<?php echo JText::_($type); ?>
+				</h3>
+				<?php endif; ?>
+			</div>
+			<div class="modal-body">
+				<?php if (!empty($msgs)) : ?>
+				<?php foreach ($msgs as $msg) : ?>
+				<div class="alert-message">
+					<?php echo $msg; ?>
 				</div>
-			<?php endforeach; ?>
+				<?php endforeach; ?>
+				<?php endif; ?>
+			</div>
 		</div>
+		<?php endforeach; ?>
+	</div>
 	<?php endif; ?>
+	<script type="text/javascript">
+		(function ($) {
+			$(document).ready(function () {
+				$('#mySystemModal').modal('show');
+			});
+		})(jQuery);
+	</script>
 </div>

@@ -6,10 +6,10 @@
     description=""
   />
   <field name="content_tab"
-    type="textarea"
+    type="editor"
     label="Content Tab"
     description=""
     filter="raw"
   />
-  
+
 </form>

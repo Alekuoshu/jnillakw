@@ -15,7 +15,6 @@
 				multiple="true"
 				label="Add items"
 				description="Add items for tabs"
-				layout="joomla.form.field.subform.repeatable-table"
 				/>
 				<field name="jn_form_name"
 					type="text"

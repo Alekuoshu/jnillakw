@@ -4,7 +4,7 @@ defined('_JEXEC') or die;
 $items = $displayData["items"];
 $class = $displayData["class"];
 $id = $options["id"];
-if(empty($id)) $id = "accordion-".uniqid();
+if(empty($id)) $id = "tabs-".uniqid();
 ?>
 <div id="<?php echo $id; ?>" class="bootstrap-tabs <?php echo $class; ?>">
 	<ul class="nav nav-tabs">
