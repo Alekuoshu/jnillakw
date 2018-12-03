@@ -1,0 +1,19 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# media
+/media/com_kwproducts
+
+# languages
+/language/en-GB/en-GB.com_kwproducts.ini
+/language/es-ES/es-ES.com_kwproducts.ini
+/administrator/language/en-GB/en-GB.com_kwproducts.ini
+/administrator/language/en-GB/en-GB.com_kwproducts.sys.ini
+/administrator/language/es-ES/es-ES.com_kwproducts.ini
+/administrator/language/es-ES/es-ES.com_kwproducts.sys.ini
+
+# component site
+/components/com_kwproducts
+
+# component admin
+/administrator/components/com_kwproducts
+/administrator/ExtensionExportIIB

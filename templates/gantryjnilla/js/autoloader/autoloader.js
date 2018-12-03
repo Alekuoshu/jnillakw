@@ -607,14 +607,15 @@
 			var currenturl = window.location.href;
 			// var getUrl = window.location;
 			// var baseurl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1] + '/';
-			var baseurl = data('base-url');
+			var baseurl = $('body').data('base-url');
 			console.log('baseurl: ' + baseurl);
 			console.log('currenturl: ' + currenturl);
 			//si no encuentra un item con url comenzado por # retorna
 			if (href != '#') return;
 			//evalua para hacer el efecto o no del scroll
-			if (baseurl == currenturl) {
+			if (baseurl == currenturl || $(this).hasClass('same_page')) {
 				event.preventDefault();
+				console.log('scroll on same_page'); // debug
 				$('html, body').animate({
 					scrollTop: $(section).offset().top - 80
 				}, 1000);
