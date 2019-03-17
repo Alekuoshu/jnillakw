@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Modules Anywhere
- * @version         7.5.2
+ * @version         7.8.0
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
@@ -50,7 +50,6 @@ class PlgButtonModulesAnywherePopup
 {
 	public function render(&$params)
 	{
-
 		$app = JFactory::getApplication();
 
 		// load the admin language file
@@ -59,8 +58,7 @@ class PlgButtonModulesAnywherePopup
 		RL_Language::load('plg_system_modulesanywhere');
 		RL_Language::load('com_modules', JPATH_ADMINISTRATOR);
 
-		RL_Document::style('regularlabs/popup.min.css');
-		RL_Document::style('regularlabs/style.min.css');
+		RL_Document::loadPopupDependencies();
 
 		// Initialize some variables
 		$db     = JFactory::getDbo();
@@ -249,12 +247,17 @@ class PlgButtonModulesAnywherePopup
 		<div class="container-fluid container-main">
 			<form action="" method="post" name="adminForm" id="adminForm">
 				<div class="alert alert-info">
-					<?php echo RL_String::html_entity_decoder(JText::_('MA_CLICK_ON_ONE_OF_THE_MODULES_LINKS')); ?>
+					<?php echo RL_String::html_entity_decoder(JText::_(
+						'MA_CLICK_ON_ONE_OF_THE_MODULES_LINKS,'
+						. '<span class="rl_code">{module ID}</span>&comma; '
+						. '<span class="rl_code">{module Module Name}</span>&comma; '
+						. '<span class="rl_code">{modulepos Position}</span>'
+					)); ?>
 				</div>
 
 				<div class="row-fluid form-vertical">
 					<div class="span12 well">
-						<?php if ($params->override_style && (count(explode(',', $params->styles)) > 1 || $params->styles != $params->style)) : ?>
+						<?php if (count(explode(',', $params->styles)) > 1 || $params->styles != $params->style) : ?>
 							<div class="control-group">
 								<label id="style-lbl" for="style"
 								       class="control-label"><?php echo JText::_('MA_MODULE_STYLE'); ?></label>
@@ -366,7 +369,7 @@ class PlgButtonModulesAnywherePopup
 									<?php
 									echo '<button class="btn btn-default" rel="tooltip" title="<strong>' . JText::_('MA_USE_ID_IN_TAG') . '</strong><br>'
 										. $tag_start . $tag . ' ' . $row->id . $tag_end
-										. '" onclick="modulesanywhere_jInsertEditorText( \'' . $row->id . '\' );return false;">'
+										. '" onclick="modulesanywhere_jInsertEditorText( \'id\', \'' . $row->id . '\' );return false;">'
 										. $row->id
 										. '</button>';
 									?>
@@ -378,7 +381,7 @@ class PlgButtonModulesAnywherePopup
 									<?php
 									echo '<button class="btn btn-default" rel="tooltip" title="<strong>' . JText::_('MA_USE_TITLE_IN_TAG') . '</strong><br>'
 										. $tag_start . $tag . ' ' . htmlspecialchars($row->title) . $tag_end
-										. '" onclick="modulesanywhere_jInsertEditorText( \'' . addslashes(htmlspecialchars($row->title)) . '\' );return false;">'
+										. '" onclick="modulesanywhere_jInsertEditorText( \'title\', \'' . addslashes(htmlspecialchars($row->title)) . '\' );return false;">'
 										. htmlspecialchars($row->title)
 										. '</button>';
 									?>
@@ -392,7 +395,7 @@ class PlgButtonModulesAnywherePopup
 										<?php
 										echo '<button class="btn btn-default" rel="tooltip" title="<strong>' . JText::_('MA_USE_MODULE_POSITION_TAG') . '</strong><br>'
 											. $tag_start . $postag . ' ' . $row->position . $tag_end
-											. '" onclick="modulesanywhere_jInsertEditorText( \'' . $row->position . '\', 1 );return false;">'
+											. '" onclick="modulesanywhere_jInsertEditorText( \'position\', \'' . $row->position . '\' );return false;">'
 											. $row->position
 											. '</button>';
 										?>
@@ -422,35 +425,38 @@ class PlgButtonModulesAnywherePopup
 		list($tag_start, $tag_end) = explode('.', $params->tag_characters);
 		?>
 		<script type="text/javascript">
-			function modulesanywhere_jInsertEditorText(id, modulepos) {
+			function modulesanywhere_jInsertEditorText(type, id) {
 				(function($) {
 					var t_start = '<?php echo addslashes($tag_start); ?>';
 					var t_end   = '<?php echo addslashes($tag_end); ?>';
 
-					if (modulepos) {
+					if (type == 'position') {
 						str = t_start + '<?php echo $postag; ?> ' + id + t_end;
-					} else {
-						attribs = [];
 
-						<?php if ($params->override_style && (count(explode(',', $params->styles)) > 1 || $params->styles != $params->style)) : ?>
-						var style = $('select[name="style"]').val();
-						if (style && style != '<?php echo $params->style; ?>') {
-							attribs.push('style="' + style + '"');
-						}
-						<?php endif; ?>
-
-						if ($('input[name="showtitle"]:checked').val()) {
-							attribs.push('showtitle="' + $('input[name="showtitle"]:checked').val() + '"');
-						}
-
-						if (attribs.length) {
-							attribs = 'module="' + id + '" ' + attribs.join(' ');
-						} else {
-							attribs = id;
-						}
-
-						str = t_start + '<?php echo $tag; ?> ' + attribs + t_end;
+						window.parent.jInsertEditorText(str, '<?php echo $editor; ?>');
+						window.parent.SqueezeBox.close();
 					}
+
+					attribs = [];
+
+					<?php if (count(explode(',', $params->styles)) > 1 || $params->styles != $params->style) : ?>
+					var style = $('select[name="style"]').val();
+					if (style && style != '<?php echo $params->style; ?>') {
+						attribs.push('style="' + style + '"');
+					}
+					<?php endif; ?>
+
+					if ($('input[name="showtitle"]:checked').val()) {
+						attribs.push('showtitle="' + $('input[name="showtitle"]:checked').val() + '"');
+					}
+
+					if (attribs.length) {
+						attribs = type + '="' + id + '" ' + attribs.join(' ');
+					} else {
+						attribs = id;
+					}
+
+					str = t_start + '<?php echo $tag; ?> ' + attribs + t_end;
 
 					window.parent.jInsertEditorText(str, '<?php echo $editor; ?>');
 					window.parent.SqueezeBox.close();

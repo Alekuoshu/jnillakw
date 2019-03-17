@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Modules Anywhere
- * @version         7.5.2
+ * @version         7.8.0
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com

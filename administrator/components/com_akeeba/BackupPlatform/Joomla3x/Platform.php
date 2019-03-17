@@ -1,12 +1,8 @@
 <?php
 /**
- * Akeeba Engine
- * The modular PHP5 site backup engine
- *
- * @copyright Copyright (c)2006-2018 Nicholas K. Dionysopoulos / Akeeba Ltd
- * @license   GNU GPL version 3 or, at your option, any later version
- * @package   akeebaengine
- *
+ * @package   akeebabackup
+ * @copyright Copyright (c)2006-2019 Nicholas K. Dionysopoulos / Akeeba Ltd
+ * @license   GNU General Public License version 3, or later
  */
 
 namespace Akeeba\Engine\Platform;
@@ -99,10 +95,10 @@ class Joomla3x extends BasePlatform
 	 *
 	 * @return  bool  True if everything was read properly
 	 */
-	public function load_configuration($profile_id = null)
+	public function load_configuration($profile_id = null, $reset = true)
 	{
 		// Load the configuration
-		parent::load_configuration($profile_id);
+		parent::load_configuration($profile_id, $reset);
 
 		// If there is no embedded installer or the wrong embedded installer is selected, fix it automatically
 		$config = Factory::getConfiguration();
@@ -115,6 +111,8 @@ class Joomla3x extends BasePlatform
 			$config->set('akeeba.advanced.embedded_installer', 'angie');
 			$config->setProtectedKeys($protectedKeys);
 		}
+
+		return true;
 	}
 
 	/**
@@ -260,6 +258,11 @@ class Joomla3x extends BasePlatform
 						$root = './';
 					}
 				}
+			}
+
+			if (!in_array(substr($root, -1), ['/', '\\']))
+			{
+				$root .= DIRECTORY_SEPARATOR;
 			}
 		}
 

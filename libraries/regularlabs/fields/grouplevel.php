@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Regular Labs Library
- * @version         18.10.1468
+ * @version         18.12.19593
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
@@ -27,8 +27,6 @@ class JFormFieldRL_GroupLevel extends \RegularLabs\Library\Field
 
 	protected function getInput()
 	{
-		$this->params = $this->element->attributes();
-
 		$size      = (int) $this->get('size');
 		$multiple  = $this->get('multiple');
 		$show_all  = $this->get('show_all');

@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Modules Anywhere
- * @version         7.5.2
+ * @version         7.8.0
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
@@ -230,12 +230,27 @@ class Replace
 			return true;
 		}
 
-		$type = trim($data['type']);
+		$data['type'] = ! empty($data['type_core']) ? trim($data['type_core']) : trim($data['type']);
+		$type         = $data['type'];
 
-		// The core loadposition tag supports chrome after a comma. Modules Anywhere uses a bar.
-		if ($type == 'loadposition')
+		if ( ! empty($data['type_core']))
 		{
-			$data['id'] = str_replace(',', '|', $data['id']);
+			// Convert core loadmodule tag
+			if ($type == 'loadmodule')
+			{
+				$data['id'] = self::convertLoadModuleSyntax($data['id_core']);
+				$type       = $params->tag_module;
+			}
+
+			// Convert core loadposition tag
+			if ($type == 'loadposition')
+			{
+				$data['id'] = self::convertLoadPositionSyntax($data['id_core']);
+				$type       = $params->tag_pos;
+			}
+
+			unset($data['id_core']);
+			unset($data['type_core']);
 		}
 
 		$tag = self::getTagValues($data);
@@ -247,11 +262,6 @@ class Replace
 
 		$ignores   = [];
 		$overrides = [];
-
-		if ($params->override_style && isset($tag->style))
-		{
-			$chrome = $tag->style;
-		}
 
 		foreach ($tag as $key => $val)
 		{
@@ -282,7 +292,7 @@ class Replace
 			}
 		}
 
-		if ($type == $params->module_tag)
+		if ($type == $params->tag_module)
 		{
 			if ( ! $chrome)
 			{
@@ -329,6 +339,52 @@ class Replace
 		unset($data);
 
 		return $id;
+	}
+
+	private static function convertLoadPositionSyntax($string)
+	{
+		list($id, $style) = explode(',', $string . ',');
+
+		if ($style)
+		{
+			return trim($id);
+		}
+
+		return 'id="' . trim($id) . '" style="' . trim($style) . '"';
+	}
+
+	private static function convertLoadModuleSyntax($string)
+	{
+		list($type, $title, $style) = explode(',', $string . ',,');
+
+		$id = self::getFirstModuleIdByType($type, $title);
+
+		if ($style)
+		{
+			return $id;
+		}
+
+		return 'id="' . $id . '" style="' . trim($style) . '"';
+	}
+
+	private static function getFirstModuleIdByType($type, $title = '')
+	{
+		$db = JFactory::getDbo();
+
+		$query = $db->getQuery(true)
+			->select('id')
+			->from('#__modules')
+			->where($db->quoteName('client_id') . ' = 0')
+			->where($db->quoteName('module') . ' = ' . $db->quote(trim($type)));
+
+		if ($title)
+		{
+			$query->where($db->quoteName('title') . ' = ' . $db->quote(trim($title)));
+		}
+
+		$db->setQuery($query);
+
+		return $db->loadResult();
 	}
 
 	private static function shouldFixHtml($tag, $pre, $post)
@@ -386,7 +442,7 @@ class Replace
 
 		$key_aliases = [
 			'id'      => ['ids', 'module', 'position', 'title', 'alias'],
-			'style'   => ['module_style', 'chrome'],
+			'style'   => ['module_style', 'html_style', 'chrome'],
 			'fixhtml' => ['fix_html', 'html_fix', 'htmlfix'],
 		];
 

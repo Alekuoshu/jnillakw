@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Regular Labs Library
- * @version         18.10.1468
+ * @version         18.12.19593
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
@@ -28,8 +28,6 @@ class JFormFieldRL_Agents extends \RegularLabs\Library\Field
 
 	protected function getInput()
 	{
-		$this->params = $this->element->attributes();
-
 		if ( ! is_array($this->value))
 		{
 			$this->value = explode(',', $this->value);
@@ -106,7 +104,6 @@ class JFormFieldRL_Agents extends \RegularLabs\Library\Field
 			case 'browsers':
 				if ($this->get('simple') && $this->get('simple') !== 'false')
 				{
-
 					$agents[] = ['Chrome', 'Chrome'];
 					$agents[] = ['Firefox', 'Firefox'];
 					$agents[] = ['Edge', 'Edge'];

@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Regular Labs Library
- * @version         18.10.1468
+ * @version         18.12.19593
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
@@ -12,7 +12,6 @@
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory as JFactory;
-use RegularLabs\Library\Document as RL_Document;
 
 if ( ! is_file(JPATH_LIBRARIES . '/regularlabs/autoload.php'))
 {
@@ -32,10 +31,6 @@ class JFormFieldRL_Block extends \RegularLabs\Library\Field
 
 	protected function getInput()
 	{
-		$this->params = $this->element->attributes();
-
-		RL_Document::stylesheet('regularlabs/style.min.css');
-
 		$title       = $this->get('label');
 		$description = $this->get('description');
 		$class       = $this->get('class');

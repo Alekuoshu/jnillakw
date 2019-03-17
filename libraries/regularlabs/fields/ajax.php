@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Regular Labs Library
- * @version         18.10.1468
+ * @version         18.12.19593
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
@@ -12,7 +12,6 @@
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory as JFactory;
-use Joomla\CMS\HTML\HTMLHelper as JHtml;
 use Joomla\CMS\Language\Text as JText;
 use RegularLabs\Library\Document as RL_Document;
 
@@ -29,17 +28,13 @@ class JFormFieldRL_Ajax extends \RegularLabs\Library\Field
 
 	protected function getInput()
 	{
-		$this->params = $this->element->attributes();
-
-		JHtml::_('jquery.framework');
-
-		RL_Document::script('regularlabs/script.min.js');
+		RL_Document::loadMainDependencies();
 
 		$loading = "jQuery(\"#" . $this->id . "\").find(\"span\").attr(\"class\", \"icon-refresh icon-spin\");";
 		$success = "jQuery(\"#" . $this->id . "\").find(\"span\").attr(\"class\", \"icon-ok\");"
-			. "if(data){jQuery(\"#message_" . $this->id . "\").addClass(\"alert alert-success alert-inline\").html(data);}";
+			. "if(data){jQuery(\"#message_" . $this->id . "\").addClass(\"alert alert-success alert-noclose alert-inline\").html(data);}";
 		$error   = "jQuery(\"#" . $this->id . "\").find(\"span\").attr(\"class\", \"icon-warning\");"
-			. "if(data){jQuery(\"#message_" . $this->id . "\").addClass(\"alert alert-danger alert-inline\").html(data);}";
+			. "if(data){jQuery(\"#message_" . $this->id . "\").addClass(\"alert alert-danger alert-noclose alert-inline\").html(data);}";
 
 		$script = "function loadAjax" . $this->id . "() {"
 			. $loading

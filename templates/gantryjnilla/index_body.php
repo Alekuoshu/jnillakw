@@ -7,7 +7,7 @@ defined ( '_JEXEC' ) or die ();
 		<?php echo JLayoutHelper::render('jnilla.core.group', array('group' => 'jn-header', 'tag' => 'header')); ?>
 		<?php echo JLayoutHelper::render('jnilla.core.group', array('group' => 'jn-before')); ?>
 		<?php echo JLayoutHelper::render('jnilla.core.main_body'); ?>
-		<?php echo JLayoutHelper::render('jnilla.core.group', array('group' => 'jn-after')); ?>
+		<?php echo JLayoutHelper::render('jnilla.core.group', array('group' => 'jn-after', 'rows' => 8)); ?>
 		<?php echo JLayoutHelper::render('jnilla.core.group', array('group' => 'jn-footer', 'tag' => 'footer')); ?>
 		<?php echo JLayoutHelper::render('jnilla.core.group', array('group' => 'jn-bottom', 'rows' => 1)); ?>
 		<?php echo JLayoutHelper::render('jnilla.core.debug'); ?>

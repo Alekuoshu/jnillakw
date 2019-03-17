@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Regular Labs Library
- * @version         18.10.1468
+ * @version         18.12.19593
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
@@ -12,7 +12,6 @@
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Language\Text as JText;
-use RegularLabs\Library\Document as RL_Document;
 
 if ( ! is_file(JPATH_LIBRARIES . '/regularlabs/autoload.php'))
 {
@@ -27,10 +26,7 @@ class JFormFieldRL_Icons extends \RegularLabs\Library\Field
 
 	protected function getInput()
 	{
-		RL_Document::stylesheet('regularlabs/style.min.css');
-
-		$this->params = $this->element->attributes();
-		$value        = $this->value;
+		$value = $this->value;
 		if ( ! is_array($value))
 		{
 			$value = explode(',', $value);

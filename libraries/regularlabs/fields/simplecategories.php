@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Regular Labs Library
- * @version         18.10.1468
+ * @version         18.12.19593
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
@@ -14,6 +14,7 @@ defined('_JEXEC') or die;
 use Joomla\CMS\HTML\HTMLHelper as JHtml;
 use Joomla\CMS\Language\Text as JText;
 use RegularLabs\Library\Document as RL_Document;
+use RegularLabs\Library\ShowOn as RL_ShowOn;
 
 if ( ! is_file(JPATH_LIBRARIES . '/regularlabs/autoload.php'))
 {
@@ -28,13 +29,6 @@ class JFormFieldRL_SimpleCategories extends \RegularLabs\Library\Field
 
 	protected function getInput()
 	{
-		JHtml::_('jquery.framework');
-
-		RL_Document::script('regularlabs/script.min.js');
-		RL_Document::script('regularlabs/toggler.min.js');
-
-		$this->params = $this->element->attributes();
-
 		$size = (int) $this->get('size');
 		$attr = $this->get('onchange') ? ' onchange="' . $this->get('onchange') . '"' : '';
 
@@ -66,6 +60,7 @@ class JFormFieldRL_SimpleCategories extends \RegularLabs\Library\Field
 			);
 		}
 
+		JHtml::_('jquery.framework');
 		RL_Document::script('regularlabs/simplecategories.min.js');
 
 		$selectlist = $this->selectListSimple(
@@ -81,17 +76,16 @@ class JFormFieldRL_SimpleCategories extends \RegularLabs\Library\Field
 
 		$html[] = '<div class="rl_simplecategory">';
 
-		$html[] = '<input type="hidden" class="rl_simplecategory_value" id="' . $this->id . '" name="' . $this->name . '" value="' . $this->value . '" checked="checked">';
+		$html[] = '<div class="rl_simplecategory_select">' . $selectlist . '</div>';
 
-		$html[] = '<div class="rl_simplecategory_select">';
-		$html[] = $selectlist;
-		$html[] = '</div>';
+		$html[] = RL_ShowOn::show(
+			'<div class="rl_simplecategory_new">'
+			. '<input type="text" id="' . $this->id . '_new" value="" placeholder="' . JText::_('RL_NEW_CATEGORY_ENTER') . '">'
+			. '</div>',
+			$this->fieldname . '_select:-1', $this->formControl
+		);
 
-		$html[] = '<div id="' . rand(1000000, 9999999) . '___' . $this->fieldname . '_select.-1" class="rl_toggler rl_toggler_nofx" style="display:none;">';
-		$html[] = '<div class="rl_simplecategory_new">';
-		$html[] = '<input type="text" id="' . $this->id . '_new" value="" placeholder="' . JText::_('RL_NEW_CATEGORY_ENTER') . '">';
-		$html[] = '</div>';
-		$html[] = '</div>';
+		$html[] = '<input type="hidden" class="rl_simplecategory_value" id="' . $this->id . '" name="' . $this->name . '" value="' . $this->value . '" />';
 
 		$html[] = '</div>';
 

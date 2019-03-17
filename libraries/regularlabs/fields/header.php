@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Regular Labs Library
- * @version         18.10.1468
+ * @version         18.12.19593
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
@@ -13,7 +13,6 @@ defined('_JEXEC') or die;
 
 use Joomla\CMS\Application\ApplicationHelper as JApplicationHelper;
 use Joomla\CMS\Language\Text as JText;
-use RegularLabs\Library\Document as RL_Document;
 use RegularLabs\Library\RegEx as RL_RegEx;
 use RegularLabs\Library\StringHelper as RL_String;
 
@@ -35,10 +34,6 @@ class JFormFieldRL_Header extends \RegularLabs\Library\Field
 
 	protected function getInput()
 	{
-		$this->params = $this->element->attributes();
-
-		RL_Document::stylesheet('regularlabs/style.min.css');
-
 		$title       = $this->get('label');
 		$description = $this->get('description');
 		$xml         = $this->get('xml');
@@ -46,14 +41,7 @@ class JFormFieldRL_Header extends \RegularLabs\Library\Field
 
 		if ($description)
 		{
-			// variables
-			$v1 = $this->get('var1');
-			$v2 = $this->get('var2');
-			$v3 = $this->get('var3');
-			$v4 = $this->get('var4');
-			$v5 = $this->get('var5');
-
-			$description = RL_String::html_entity_decoder(trim(JText::sprintf($description, $v1, $v2, $v3, $v4, $v5)));
+			$description = RL_String::html_entity_decoder(trim(JText::_($description)));
 		}
 
 		if ($title)

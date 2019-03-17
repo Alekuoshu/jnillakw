@@ -1,7 +1,7 @@
 <?php
 /**
- * @package   AkeebaBackup
- * @copyright Copyright (c)2006-2018 Nicholas K. Dionysopoulos / Akeeba Ltd
+ * @package   akeebabackup
+ * @copyright Copyright (c)2006-2019 Nicholas K. Dionysopoulos / Akeeba Ltd
  * @license   GNU General Public License version 3, or later
  */
 
@@ -17,7 +17,7 @@ $configurl = base64_encode(JUri::base().'index.php?option=com_akeeba&view=Config
         <div class="akeeba-filter-bar akeeba-filter-bar--left akeeba-form-section akeeba-form--inline">
             <div class="akeeba-filter-element akeeba-form-group">
                 <input type="text" name="description" id="description"
-                       value="<?php echo $this->escape($this->getModel()->getState('description', '')); ?>" size="30"
+                       value="<?php echo $this->escape($this->getModel()->getState('description', '', 'string')); ?>" size="30"
                        onchange="document.adminForm.submit();"
                        placeholder="<?php echo \JText::_('COM_AKEEBA_PROFILES_COLLABEL_DESCRIPTION'); ?>"
                 />

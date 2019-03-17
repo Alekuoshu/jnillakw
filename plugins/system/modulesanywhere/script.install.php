@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Modules Anywhere
- * @version         7.5.2
+ * @version         7.8.0
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
@@ -36,7 +36,51 @@ class PlgSystemModulesAnywhereInstallerScript extends PlgSystemModulesAnywhereIn
 
 	public function onAfterInstall($route)
 	{
+		$this->fixOldParams();
 		$this->disableCoreEditorPlugin();
+	}
+
+	private function fixOldParams()
+	{
+		$query = $this->db->getQuery(true)
+			->select($this->db->quoteName('extension_id'))
+			->select($this->db->quoteName('params'))
+			->from('#__extensions')
+			->where($this->db->quoteName('element') . ' = ' . $this->db->quote('modulesanywhere'))
+			->where($this->db->quoteName('type') . ' = ' . $this->db->quote('plugin'))
+			->where($this->db->quoteName('folder') . ' = ' . $this->db->quote('system'));
+		$this->db->setQuery($query);
+
+		$plugin = $this->db->loadObject();
+
+		if (empty($plugin) || empty($plugin->params))
+		{
+			return;
+		}
+
+		$params = json_decode($plugin->params);
+
+		if (empty($params))
+		{
+			return;
+		}
+
+		if (isset($params->handle_core_tags) || ! isset($params->handle_loadposition))
+		{
+			return;
+		}
+
+		$params->handle_core_tags = $params->handle_loadposition;
+		unset($params->handle_loadposition);
+
+		$params = json_encode($params);
+
+		$query->clear()
+			->update('#__extensions')
+			->set($this->db->quoteName('params') . ' = ' . $this->db->quote($params))
+			->where($this->db->quoteName('extension_id') . ' = ' . $this->db->quote($plugin->extension_id));
+		$this->db->setQuery($query);
+		$this->db->execute();
 	}
 
 	private function showDivMessage()

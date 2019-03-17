@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="3.4" type="plugin" group="system" method="upgrade">
+<extension version="3.9" type="plugin" group="system" method="upgrade">
 	<name>plg_system_modulesanywhere</name>
 	<description>PLG_SYSTEM_MODULESANYWHERE_DESC</description>
-	<version>7.5.2</version>
-	<creationDate>October 2018</creationDate>
+	<version>7.8.0</version>
+	<creationDate>December 2018</creationDate>
 	<author>Regular Labs (Peter van Westen)</author>
 	<authorEmail>info@regularlabs.com</authorEmail>
 	<authorUrl>https://www.regularlabs.com</authorUrl>
@@ -26,7 +26,7 @@
 		<folder>vendor</folder>
 	</files>
 
-	<media folder="media" destination="whatnothing">
+	<media folder="media" destination="modulesanywhere">
 		<folder>images</folder>
 	</media>
 
@@ -40,30 +40,23 @@
 				<field name="@version" type="rl_version" extension="MODULES_ANYWHERE" />
 				<field name="@header" type="rl_header"
 					   label="MODULES_ANYWHERE"
-					   description="MODULES_ANYWHERE_DESC"
+					   description="MODULES_ANYWHERE_DESC,
+							&lt;span class=&quot;rl_code&quot;&gt;{module Main Menu}&lt;/span&gt;,
+							&lt;span class=&quot;rl_code&quot;&gt;{module 3}&lt;/span&gt;,
+							&lt;span class=&quot;rl_code&quot;&gt;{modulepos mainmenu}&lt;/span&gt;,
+							&lt;span class=&quot;rl_code&quot;&gt;{module title=&quot;Main Menu&quot; style=&quot;well&quot;}&lt;/span&gt;"
 					   url="https://www.regularlabs.com/modulesanywhere" />
 			</fieldset>
 
-			<fieldset name="RL_STYLING">
+			<fieldset name="RL_BEHAVIOUR">
 				<field name="style" type="text" default="none"
 					   label="MA_DEFAULT_STYLE"
 					   description="MA_DEFAULT_STYLE_DESC" />
-				<field name="styles" type="text" default="none,division,tabs,well,xhtml"
-					   label="MA_DEFAULT_STYLES"
-					   description="MA_DEFAULT_STYLES_DESC" />
-				<field name="override_style" type="radio" class="btn-group" default="1"
-					   label="MA_ENABLE_STYLE_OVERRIDING"
-					   description="MA_ENABLE_STYLE_OVERRIDING_DESC">
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
-			</fieldset>
-
-			<fieldset name="RL_BEHAVIOUR">
-				<field name="@notice_override_settings" type="rl_plaintext"
+				<field name="@notice_override_settings" type="rl_onlypro"
 					   label="MA_ENABLE_PARAMETER_OVERRIDING"
-					   description="MA_ENABLE_PARAMETER_OVERRIDING_DESC"
-					   default="RL_ONLY_AVAILABLE_IN_PRO" />
+					   description="MA_ENABLE_PARAMETER_OVERRIDING_DESC,
+							&lt;span class=&quot;rl_code&quot;&gt;{module title=&quot;Main Menu&quot; moduleclass_sfx=&quot;red&quot; some_other_setting=&quot;123&quot;}&lt;/span&gt;,
+							&lt;span class=&quot;rl_code&quot;&gt;name=&quot;param[...]&quot;&lt;/span&gt;" />
 				<field name="ignore_access" type="radio" class="btn-group" default="0"
 					   label="MA_IGNORE_MODULE_ACCESS"
 					   description="MA_IGNORE_MODULE_ACCESS_DESC">
@@ -89,10 +82,9 @@
 					<option value="1">JYES</option>
 				</field>
 				<field name="@loadlanguage_config" type="rl_loadlanguage" extension="com_config" />
-				<field name="@notice_show_edit" type="rl_plaintext"
+				<field name="@notice_show_edit" type="rl_onlypro"
 					   label="MA_FRONTEND_EDITING"
-					   description="COM_CONFIG_FRONTEDITING_DESC"
-					   default="RL_ONLY_AVAILABLE_IN_PRO" />
+					   description="COM_CONFIG_FRONTEDITING_DESC" />
 				<field name="fix_html" type="radio" class="btn-group" default="1"
 					   label="RL_FIX_HTML"
 					   description="RL_FIX_HTML_DESC">
@@ -111,28 +103,25 @@
 				<field name="@block_articles_a" type="rl_block" start="1"
 					   label="RL_ARTICLES"
 					   description="MA_ARTICLES_DESC" />
-				<field name="@notice_articles" type="rl_plaintext"
+				<field name="@notice_articles" type="rl_onlypro"
 					   label="MA_SECURITY_LEVEL"
-					   description="MA_SECURITY_LEVEL_DESC"
-					   default="RL_ONLY_AVAILABLE_IN_PRO" />
+					   description="MA_SECURITY_LEVEL_DESC" />
 				<field name="@block_articles_b" type="rl_block" end="1" />
 
 				<field name="@block_components_a" type="rl_block" start="1"
 					   label="RL_COMPONENTS"
 					   description="MA_COMPONENTS_DESC" />
-				<field name="@notice_components" type="rl_plaintext"
+				<field name="@notice_components" type="rl_onlypro"
 					   label="RL_DISABLE_ON_COMPONENTS"
-					   description="MA_DISABLE_ON_COMPONENTS_DESC"
-					   default="RL_ONLY_AVAILABLE_IN_PRO" />
+					   description="MA_DISABLE_ON_COMPONENTS_DESC" />
 				<field name="@block_components_b" type="rl_block" end="1" />
 
 				<field name="@block_otherareas_a" type="rl_block" start="1"
 					   label="RL_OTHER_AREAS"
 					   description="MA_OTHER_AREAS_DESC" />
-				<field name="@notice_otherareas" type="rl_plaintext"
+				<field name="@notice_otherareas" type="rl_onlypro"
 					   label="RL_ENABLE_OTHER_AREAS"
-					   description="MA_ENABLE_OTHER_AREAS_DESC"
-					   default="RL_ONLY_AVAILABLE_IN_PRO" />
+					   description="MA_ENABLE_OTHER_AREAS_DESC" />
 				<field name="@block_otherareas_b" type="rl_block" end="1" />
 			</fieldset>
 
@@ -148,8 +137,11 @@
 				</field>
 
 				<field name="@block_default_tag_a" type="rl_block" start="1"
-					   label="MA_DEFAULT_DATA_TAG_SETTINGS"
-					   description="MA_DEFAULT_DATA_TAG_SETTINGS_DESC" />
+					   label="MA_DEFAULT_DATA_TAG_SETTINGS" />
+				<field name="styles" type="text" default="none,division,tabs,well,xhtml"
+					   label="MA_DEFAULT_STYLES"
+					   description="MA_DEFAULT_STYLES_DESC" />
+
 				<field name="showtitle" type="radio" class="btn-group" default=""
 					   label="COM_MODULES_FIELD_SHOWTITLE_LABEL"
 					   description="COM_MODULES_FIELD_SHOWTITLE_DESC">
@@ -172,29 +164,28 @@
 					   description="RL_TAG_CHARACTERS_DESC">
 					<option value="{.}">{...}</option>
 					<option value="[.]">[...]</option>
+					<option value="«.»">«...»</option>
 					<option value="{{.}}">{{...}}</option>
 					<option value="[[.]]">[[...]]</option>
 					<option value="[:.:]">[:...:]</option>
 					<option value="[%.%]">[%...%]</option>
 				</field>
-				<field name="handle_loadposition" type="radio" class="btn-group" default="0"
-					   label="MA_HANDLE_LOADPOSITION_TAGS"
-					   description="MA_HANDLE_LOADPOSITION_TAGS_DESC">
+				<field name="handle_core_tags" type="radio" class="btn-group" default="0"
+					   label="MA_HANDLE_CORE_TAGS"
+					   description="MA_HANDLE_CORE_TAGS_DESC">
 					<option value="0">JNO</option>
 					<option value="1">JYES</option>
 				</field>
-				<field name="@toggler_10a" type="rl_toggler" param="handle_loadposition" value="1" />
 				<field name="activate_jumper" type="radio" class="btn-group" default="0"
 					   label="MA_ACTIVATE_JUMPER"
-					   description="MA_ACTIVATE_JUMPER_DESC">
+					   description="MA_ACTIVATE_JUMPER_DESC"
+					   showon="handle_core_tags:1">
 					<option value="0">JNO</option>
 					<option value="">JYES</option>
 				</field>
-				<field name="@toggler_11a" type="rl_toggler" param="activate_jumper" value="" />
-				<field name="@block_11" type="rl_plaintext"
-					   label="&#60;&#99;&#101;&#110;&#116;&#101;&#114;&#62;&#60;&#105;&#109;&#103;&#32;&#115;&#114;&#99;&#61;&#34;&#46;&#46;&#47;&#109;&#101;&#100;&#105;&#97;&#47;&#109;&#111;&#100;&#117;&#108;&#101;&#115;&#97;&#110;&#121;&#119;&#104;&#101;&#114;&#101;&#47;&#105;&#109;&#97;&#103;&#101;&#115;&#47;&#106;&#117;&#109;&#112;&#46;&#103;&#105;&#102;&#34;&#32;&#98;&#111;&#114;&#100;&#101;&#114;&#61;&#34;&#48;&#34;&#32;&#97;&#108;&#116;&#61;&#34;&#34;&#32;&#119;&#105;&#100;&#116;&#104;&#61;&#34;&#56;&#52;&#34;&#32;&#104;&#101;&#105;&#103;&#104;&#116;&#61;&#34;&#49;&#52;&#48;&#34;&#32;&#115;&#116;&#121;&#108;&#101;&#61;&#34;&#102;&#108;&#111;&#97;&#116;&#58;&#110;&#111;&#110;&#101;&#59;&#34;&#32;&#47;&#62;&#60;&#47;&#99;&#101;&#110;&#116;&#101;&#114;&#62;" />
-				<field name="@toggler_11b" type="rl_toggler" />
-				<field name="@toggler_10b" type="rl_toggler" />
+				<field name="@jumper" type="note" class="text-center span4 no-animation"
+					   description="&#x3C;&#x69;&#x6D;&#x67;&#x20;&#x73;&#x72;&#x63;&#x3D;&#x22;&#x2E;&#x2E;&#x2F;&#x6D;&#x65;&#x64;&#x69;&#x61;&#x2F;&#x6D;&#x6F;&#x64;&#x75;&#x6C;&#x65;&#x73;&#x61;&#x6E;&#x79;&#x77;&#x68;&#x65;&#x72;&#x65;&#x2F;&#x69;&#x6D;&#x61;&#x67;&#x65;&#x73;&#x2F;&#x6A;&#x75;&#x6D;&#x70;&#x2E;&#x67;&#x69;&#x66;&#x22;&#x20;&#x61;&#x6C;&#x74;&#x3D;&#x22;&#x22;&#x20;&#x77;&#x69;&#x64;&#x74;&#x68;&#x3D;&#x22;&#x31;&#x30;&#x30;&#x22;&#x20;&#x68;&#x65;&#x69;&#x67;&#x68;&#x74;&#x3D;&#x22;&#x31;&#x34;&#x38;&#x22;&#x20;&#x2F;&#x3E;"
+					   showon="handle_core_tags:1[AND]activate_jumper:" />
 			</fieldset>
 		</fields>
 	</config>

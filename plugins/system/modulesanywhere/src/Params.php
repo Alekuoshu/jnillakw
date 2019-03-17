@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Modules Anywhere
- * @version         7.5.2
+ * @version         7.8.0
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
@@ -44,23 +44,29 @@ class Params
 	{
 		$params = self::get();
 
-		$tags = [
+		return [
 			$params->tag_module,
 			$params->tag_pos,
 		];
+	}
 
-		if ($params->handle_loadposition)
+	public static function getCoreTagNames()
+	{
+		$params = self::get();
+
+		if ( ! $params->handle_core_tags)
 		{
-			$tags[] = 'loadposition';
+			return [];
 		}
 
-		return $tags;
+		return [
+			'loadmodule',
+			'loadposition',
+		];
 	}
 
 	public static function getTags($only_start_tags = false)
 	{
-		$params = self::get();
-
 		list($tag_start, $tag_end) = self::getTagCharacters();
 
 		$tags = [
@@ -73,6 +79,11 @@ class Params
 		foreach (self::getTagNames() as $tag)
 		{
 			$tags[0][] = $tag_start . $tag;
+		}
+
+		foreach (self::getCoreTagNames() as $tag)
+		{
+			$tags[0][] = '{' . $tag;
 		}
 
 		return $only_start_tags ? $tags[0] : $tags;
@@ -104,11 +115,18 @@ class Params
 
 		self::$regexes = (object) [];
 
-		$tags = RL_RegEx::quote(self::getTagNames());
+		$tags      = self::getTagNames();
+		$core_tags = self::getCoreTagNames();
+
+		$tags      = RL_RegEx::quote($tags, 'type');
+		$core_tags = ! empty($core_tags) ? RL_RegEx::quote(self::getCoreTagNames(), 'type_core') : [];
 
 		self::$regexes->tag =
 			'(?<pre>' . $pre . ')'
-			. $tag_start . '(?<type>' . $tags . ')' . $spaces . '(?<id>' . $inside_tag . ')' . $tag_end
+			. '(?:'
+			. $tag_start . $tags . $spaces . '(?<id>' . $inside_tag . ')' . $tag_end
+			. (! empty($core_tags) ? '|\{' . $core_tags . $spaces . '(?<id_core>' . $inside_tag . ')\}' : '')
+			. ')'
 			. '(?<post>' . $post . ')';
 
 		return self::$regexes;

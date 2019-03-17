@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Modules Anywhere
- * @version         7.5.2
+ * @version         7.8.0
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
@@ -332,8 +332,8 @@ class Plugin extends JPlugin
 			return;
 		}
 
-		if (version_compare($plugin['version'], '18.10.1468', '<')
-			|| version_compare($library['version'], '18.10.1468', '<'))
+		if (version_compare($plugin['version'], '18.12.19593', '<')
+			|| version_compare($library['version'], '18.12.19593', '<'))
 		{
 			define('REGULAR_LABS_LIBRARY_INSTALLED', 'outdated');
 

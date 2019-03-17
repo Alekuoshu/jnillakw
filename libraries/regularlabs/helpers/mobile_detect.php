@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Regular Labs Library
- * @version         18.10.1468
+ * @version         18.12.19593
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
@@ -20,4 +20,8 @@ if (is_file(JPATH_LIBRARIES . '/regularlabs/autoload.php'))
 
 class RLMobile_Detect extends \RegularLabs\Library\MobileDetect
 {
+	public function isMac()
+	{
+		return $this->match('(Mac OS|Mac_PowerPC|Macintosh)');
+	}
 }

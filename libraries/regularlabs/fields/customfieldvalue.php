@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Regular Labs Library
- * @version         18.10.1468
+ * @version         18.12.19593
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
@@ -32,8 +32,6 @@ class JFormFieldRL_CustomFieldValue extends \RegularLabs\Library\Field
 
 	protected function getInput()
 	{
-		$this->params = $this->element->attributes();
-
 		$label       = $this->get('label') ? $this->get('label') : '';
 		$size        = $this->get('size') ? 'style="width:' . $this->get('size') . 'px"' : '';
 		$class       = 'class="' . ($this->get('class') ? $this->get('class') : 'text_area') . '"';

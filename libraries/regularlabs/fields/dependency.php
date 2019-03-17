@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Regular Labs Library
- * @version         18.10.1468
+ * @version         18.12.19593
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
@@ -12,9 +12,7 @@
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory as JFactory;
-use Joomla\CMS\HTML\HTMLHelper as JHtml;
 use Joomla\CMS\Language\Text as JText;
-use RegularLabs\Library\Document as RL_Document;
 use RegularLabs\Library\RegEx as RL_RegEx;
 
 jimport('joomla.form.formfield');
@@ -37,11 +35,6 @@ class JFormFieldRL_Dependency extends \RegularLabs\Library\Field
 
 	protected function getInput()
 	{
-		$this->params = $this->element->attributes();
-
-		JHtml::_('jquery.framework');
-		RL_Document::script('regularlabs/script.min.js');
-
 		if ($file = $this->get('file'))
 		{
 			$label = $this->get('label', 'the main extension');

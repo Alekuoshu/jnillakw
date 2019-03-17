@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Regular Labs Library
- * @version         18.10.1468
+ * @version         18.12.19593
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
@@ -29,8 +29,6 @@ class JFormFieldRL_CodeEditor extends \RegularLabs\Library\Field
 
 	protected function getInput()
 	{
-		$this->params = $this->element->attributes();
-
 		$width  = $this->get('width', '100%');
 		$height = $this->get('height', 400);
 
@@ -47,9 +45,7 @@ class JFormFieldRL_CodeEditor extends \RegularLabs\Library\Field
 				. '" id="' . $this->id . '">' . $this->value . '</textarea>';
 		}
 
-		RL_Document::script('regularlabs/script.min.js');
 		RL_Document::script('regularlabs/codemirror.min.js');
-		RL_Document::stylesheet('regularlabs/style.min.css');
 		RL_Document::stylesheet('regularlabs/codemirror.min.css');
 
 		JFactory::getDocument()->addScriptDeclaration("

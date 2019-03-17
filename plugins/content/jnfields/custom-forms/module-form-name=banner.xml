@@ -2,43 +2,63 @@
 <form>
 	<fields name="params">
 		<fieldset name="jnfields" label="Jn Fields">
-		<field name="image"
-		type="media"
-		label="Image"
-		description=""
-	/>
-	<field name="text1"
-		type="editor"
-		label="Text 1"
-		description=""
-		buttons="true"
-		filter="raw"
-	/>
-	<field name="text2"
-		type="editor"
-		label="Text 2"
-		description=""
-		buttons="true"
-		filter="raw"
-	/>
-	<field name="btntext"
-		type="text"
-		label="Text Button"
-		description=""
-	/>
-	<field name="btnurl"
-		type="menuitem"
-		default=""
-		label="Select a menu item"
-		description="Select a menu item"
-	>
-	<option	value="">JDEFAULT</option>
-	</field>
-			<field name="jn_form_name"
-				type="text"
-				label="PLG_CONTENT_JNFIELDS_FIELD_FORM_NAME_LABEL"
-				description="PLG_CONTENT_JNFIELDS_FIELD_FORM_NAME_DESC"
-			/>
+		<field name="jnholder"
+				type="radio"
+				default="0"
+				label="Jn Holder"
+				description="Choose Yes if you want use jn holder for images"
+				class="btn-group btn-group-yesno">
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+			</field>
+			<field name="ratio"
+				type="list"
+				label="Select an option"
+				default="cinema"
+				description=""
+				showon="jnholder:1">
+				<option value="box">Box</option>
+				<option value="tv">Tv</option>
+				<option value="wide">Wide</option>
+				<option value="cinema">Cinema</option>
+			</field>
+			<field name="image"
+			type="media"
+			label="Image"
+			description=""
+		/>
+		<field name="text1"
+			type="editor"
+			label="Text 1"
+			description=""
+			buttons="true"
+			filter="raw"
+		/>
+		<field name="text2"
+			type="editor"
+			label="Text 2"
+			description=""
+			buttons="true"
+			filter="raw"
+		/>
+		<field name="btntext"
+			type="text"
+			label="Text Button"
+			description=""
+		/>
+		<field name="btnurl"
+			type="menuitem"
+			default=""
+			label="Select a menu item"
+			description="Select a menu item"
+		>
+		<option	value="">JDEFAULT</option>
+		</field>
+		<field name="jn_form_name"
+			type="text"
+			label="PLG_CONTENT_JNFIELDS_FIELD_FORM_NAME_LABEL"
+			description="PLG_CONTENT_JNFIELDS_FIELD_FORM_NAME_DESC"
+		/>
 		</fieldset>
 	</fields>
 </form>

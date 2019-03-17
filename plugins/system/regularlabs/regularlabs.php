@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Regular Labs Library
- * @version         18.10.1468
+ * @version         18.12.19593
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
@@ -12,7 +12,6 @@
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory as JFactory;
-use Joomla\CMS\HTML\HTMLHelper as JHtml;
 use Joomla\CMS\Plugin\CMSPlugin as JPlugin;
 use Joomla\CMS\Uri\Uri as JUri;
 use Joomla\Registry\Registry;
@@ -72,9 +71,7 @@ class PlgSystemRegularLabs extends JPlugin
 			return;
 		}
 
-		JHtml::_('jquery.framework');
-
-		RL_Document::script('regularlabs/script.min.js');
+		RL_Document::loadMainDependencies();
 	}
 
 	public function onAfterRender()
